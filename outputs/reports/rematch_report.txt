@@ -1,0 +1,64 @@
+================================================================
+RE-MATCHING AGAINST FULL ARTICLE TEXT
+================================================================
+articles with downloaded text: 107,514
+
+HASHTAG SHARE
+  before (web address + headline):  52.8%
+  after  (+ article text)        :  54.7%
+  articles that gained a hashtag : 2,004
+
+KEYWORDS PER ARTICLE
+  before: 1.02    after: 1.53
+
+BRAZILIAN HASHTAGS  (the test case)
+  #EleNão                      before     3   after    16
+  #MeuPrimeiroAssédio          before     0   after     1
+  #ChegaDeFiuFiu               before     0   after     0
+  #MeuAmigoSecreto             before     0   after     8
+  #MexeuComUmaMexeuComTodas    before     0   after     3
+  #DeixaElaTrabalhar           before     4   after     4
+  #PrimeiroAssédio             before     0   after     0
+  #EuTambém                    before     0   after    11
+
+HASHTAG SHARE BY COUNTRY  (n>=300 with text)
+  country                   n  before   after   change
+  France               11,228   16.0%   22.9%    +6.9pp
+  Belgium               1,163   19.6%   25.7%    +6.1pp
+  Nigeria                 781   19.1%   23.8%    +4.7pp
+  Switzerland           1,609   33.3%   37.6%    +4.4pp
+  Sweden                2,588   81.6%   85.2%    +3.6pp
+  Finland                 319   87.1%   90.6%    +3.4pp
+  Romania               1,574   18.1%   21.5%    +3.4pp
+  Denmark                 331   88.5%   91.5%    +3.0pp
+  Indonesia               399   29.6%   32.6%    +3.0pp
+  Norway                  757   93.5%   96.2%    +2.6pp
+  Pakistan                595   81.3%   83.4%    +2.0pp
+  Canada                2,745   82.3%   84.1%    +1.9pp
+  Ecuador                 328   19.2%   21.0%    +1.8pp
+  South Korea             307   22.1%   23.8%    +1.6pp
+  Argentina             5,574    9.2%   10.8%    +1.5pp
+
+TERMS MOST OFTEN FOUND ONLY IN THE BODY TEXT
+  sexual harassment                  16,183
+  sexual violence                     3,722
+  harcèlement                         3,099
+  #MeToo                              2,776
+  violencia de género                 2,582
+  harcèlement sexuel                  1,926
+  violence against women              1,595
+  Asia Argento                        1,517
+  violences sexuelles                 1,412
+  #TimesUp                            1,324
+  sexuella trakasserier               1,128
+  #BalanceTonPorc                     1,059
+  viol                                1,053
+  acoso sexual                        1,021
+  false accusations                     806
+  due process                           785
+  witch hunt                            769
+  Tariq Ramadan                         751
+  MJ Akbar                              671
+  Priya Ramani                          526
+
+wrote rematched_articles.csv

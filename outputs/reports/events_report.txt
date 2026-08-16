@@ -1,0 +1,164 @@
+EVENT PROPAGATION
+======================================================================
+
+--- NYT publishes Weinstein story  (2017-10-05)
+    origin: United States
+    countries covering it: 34   articles: 2,130
+    countries with enough articles to trust (n>=15): 18
+    *** LAG NOT MEASURABLE FOR THIS EVENT ***
+    Happened 10 days before the #MeToo hashtag existed. Our corpus cannot see the first 10 days of this story, so every country appears to peak around day +12. That is when our collection starts, not when the world reacted. Do not read a lag here.
+
+--- Alyssa Milano tweet starts #MeToo  (2017-10-15)
+    origin: United States
+    note: This is the first event our corpus can see properly, because the
+          hashtag it searches for was created on this day.
+    countries covering it: 35   articles: 3,131
+    countries with enough articles to trust (n>=15): 24
+    origin country peaked at day +2
+    other countries peaked a median of +2 days after the origin
+    same day or next day : 10 of 23
+    2 to 6 days later    : 7
+    a week or more later : 6
+    order of peaks: South Africa +1d, Austria +2d, Canada +2d, India +2d, United Kingdom +2d, United States +2d, Greece +2d, Switzerland +2d, Brazil +3d, Italy +3d, Poland +3d, Germany +4d, Romania +4d, Israel +4d, Pakistan +4d, Australia +6d, Denmark +7d, Spain +8d, France +15d, Netherlands +25d, Finland +36d, Sweden +37d, Czech Republic +38d, Norway +45d
+
+--- Swedish wave, Kulturprofilen expose  (2017-11-21)
+    origin: Sweden
+    note: Svenska Dagbladet published the Kulturprofilen allegations on 21
+          November 2017. Swedish coverage peaks on 21 and 22 November.
+          Swedish hashtags such as #tystnadtagning and #visjungerut belong
+          to this wave, not to the American one.
+    countries covering it: 2   articles: 170
+    countries with enough articles to trust (n>=15): 1
+    origin country peaked at day +1
+    order of peaks: Sweden +1d
+
+--- Time Person of the Year, The Silence Breakers  (2017-12-06)
+    origin: none, annual observance
+    note: A global magazine cover, not a national event. No origin country,
+          so no lag is measured. Included because it produces a worldwide
+          simultaneous spike.
+    countries covering it: 12   articles: 466
+    countries with enough articles to trust (n>=15): 6
+    order of peaks: Italy +0d, Australia +1d, Canada +1d, Germany +1d, India +1d, United States +1d
+
+--- Deneuve open letter in Le Monde  (2018-01-09)
+    origin: France
+    note: The clearest case of near-instant spread in this corpus.
+    countries covering it: 25   articles: 744
+    countries with enough articles to trust (n>=15): 12
+    origin country peaked at day +2
+    other countries peaked a median of +0 days after the origin
+    same day or next day : 9 of 11
+    2 to 6 days later    : 1
+    a week or more later : 1
+    order of peaks: Australia +1d, Germany +1d, Sweden +1d, Spain +1d, Brazil +2d, France +2d, Switzerland +2d, United Kingdom +2d, United States +2d, India +3d, Canada +6d, Italy +9d
+
+--- La Manada verdict  (2018-04-26)
+    origin: Spain
+    note: Only 21 Spanish articles with text survive from this window, so
+          the picture is thin. Spanish coverage of 'manada' in our corpus is
+          dominated by the 2019 Manresa case instead.
+    countries covering it: 2   articles: 39
+    countries with enough articles to trust (n>=15): 2
+    origin country peaked at day +0
+    other countries peaked a median of +1 days after the origin
+    same day or next day : 1 of 1
+    2 to 6 days later    : 0
+    a week or more later : 0
+    order of peaks: Spain +0d, France +1d
+
+--- #EleNao protests  (2018-09-29)
+    origin: Brazil
+    note: Only 19 Brazilian articles. Brazil entered our corpus mostly
+          through the word 'feminicidio', not through its hashtags, so this
+          movement is badly undercounted.
+    countries covering it: 1   articles: 19
+    countries with enough articles to trust (n>=15): 1
+    origin country peaked at day +1
+    order of peaks: Brazil +1d
+
+--- Kavanaugh and Ford hearing  (2018-09-27)
+    origin: United States
+    note: The Senate confirmed Kavanaugh on 6 October, which is day +9.
+          Countries peaking at +7 to +9 are probably covering the
+          confirmation vote, not arriving late to the hearing.
+    countries covering it: 24   articles: 1,290
+    countries with enough articles to trust (n>=15): 12
+    origin country peaked at day +0
+    other countries peaked a median of +7 days after the origin
+    same day or next day : 1 of 11
+    2 to 6 days later    : 0
+    a week or more later : 10
+    order of peaks: Pakistan -4d, United States +0d, United Kingdom +7d, Australia +7d, France +7d, Canada +7d, Brazil +7d, Spain +7d, Germany +8d, Italy +8d, India +13d, Switzerland +17d
+
+--- India #MeToo surge, Akbar and Ramani  (2018-10-11)
+    origin: India
+    note: Indian daily volume: 255 articles on 11 Oct, 353 on 12 Oct. MJ
+          Akbar resigned on 17 October. Earlier allegations began in late
+          September, so this date marks the surge, not the start.
+    countries covering it: 16   articles: 1,607
+    countries with enough articles to trust (n>=15): 6
+    origin country peaked at day +1
+    other countries peaked a median of -2 days after the origin
+    same day or next day : 4 of 5
+    2 to 6 days later    : 1
+    a week or more later : 0
+    order of peaks: France -3d, Pakistan -2d, Tuvalu -1d, United States +0d, India +1d, United Arab Emirates +6d
+
+Burning Sun scandal: no coverage found
+
+--- Manresa verdict, second 'manada' case  (2019-11-19)
+    origin: Spain
+    note: Spanish coverage peaks 18 to 20 November 2019. This drives much of
+          the November 2019 spike, alongside the UN day on the 25th.
+    countries covering it: 3   articles: 405
+    countries with enough articles to trust (n>=15): 1
+    origin country peaked at day +0
+    order of peaks: Spain +0d
+
+--- UN day on violence against women 2018  (2018-11-25)
+    origin: none, annual observance
+    note: An annual observance, not a news event. There is no origin
+          country, so no lag can be measured. Included to show which
+          countries mark the day.
+    countries covering it: 11   articles: 350
+    countries with enough articles to trust (n>=15): 6
+    order of peaks: France -1d, Spain -1d, Mexico +0d, Argentina +1d, United Kingdom +10d, United States +33d
+
+
+======================================================================
+REACH: how many countries covered each event
+======================================================================
+  NYT publishes Weinstein story                 34 countries
+  Alyssa Milano tweet starts #MeToo             35 countries
+  Swedish wave, Kulturprofilen expose            2 countries
+  Time Person of the Year, The Silence Breaker  12 countries
+  Deneuve open letter in Le Monde               25 countries
+  La Manada verdict                              2 countries
+  #EleNao protests                               1 countries
+  Kavanaugh and Ford hearing                    24 countries
+  India #MeToo surge, Akbar and Ramani          16 countries
+  Manresa verdict, second 'manada' case          3 countries
+  UN day on violence against women 2018         11 countries
+
+======================================================================
+READ THIS BEFORE USING THE NUMBERS
+======================================================================
+
+1. A country marked [low n] has too few articles for its peak day to
+   mean anything. With 6 articles the peak is wherever 2 of them
+   happened to land. Only countries with 15 or more are used in the
+   lag statistics above.
+
+2. A late peak may be a different event, not a delayed reaction.
+   Kavanaugh is the clearest case. The hearing was 27 September. The
+   Senate confirmed him on 6 October, which is day +9. Many countries
+   peak at +7 to +9. That is most likely them covering the
+   confirmation, not arriving late to the hearing.
+   Before calling something a lag, check what else happened that week.
+
+3. Download success varied by country, from 26% to 80%. A country
+   with poor retrieval will look quieter than it was.
+
+4. Absence of coverage here means absence in our corpus. It does not
+   prove the country ignored the event.

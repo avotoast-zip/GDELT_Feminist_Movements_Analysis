@@ -1,0 +1,166 @@
+event,country,articles,onset_day,peak_day,peak_articles,reliable
+weinstein,Switzerland,62,5,11,11,True
+weinstein,France,358,10,11,45,True
+weinstein,Canada,67,5,12,8,True
+weinstein,Austria,25,11,12,4,True
+weinstein,India,67,11,12,11,True
+weinstein,Italy,21,11,12,5,True
+weinstein,United Kingdom,32,11,12,7,True
+weinstein,United States,838,11,12,183,True
+weinstein,Brazil,24,12,13,7,True
+weinstein,Sweden,76,12,13,12,True
+weinstein,Romania,74,6,14,15,True
+weinstein,Germany,108,11,14,15,True
+weinstein,Netherlands,31,12,14,6,True
+weinstein,Norway,20,14,14,4,True
+weinstein,Australia,75,15,16,31,True
+weinstein,Belgium,44,5,20,7,True
+weinstein,Czech Republic,16,12,20,4,True
+weinstein,Poland,43,12,45,10,True
+weinstein,South Africa,13,11,11,4,False
+weinstein,Chile,6,12,11,4,False
+weinstein,Greece,8,12,12,5,False
+weinstein,Ireland,10,12,12,3,False
+weinstein,Philippines,6,12,12,2,False
+weinstein,Tuvalu,8,13,12,2,False
+weinstein,Argentina,9,11,13,4,False
+weinstein,Mexico,9,12,13,4,False
+weinstein,Hungary,7,13,13,2,False
+weinstein,Denmark,14,15,14,2,False
+weinstein,Pakistan,12,15,14,4,False
+weinstein,Turkey,9,22,14,2,False
+weinstein,Spain,9,12,17,4,False
+weinstein,Israel,6,20,19,2,False
+weinstein,Luxembourg,9,11,22,4,False
+weinstein,Finland,14,12,45,3,False
+metoo_tweet,South Africa,17,1,1,5,True
+metoo_tweet,Austria,60,1,2,4,True
+metoo_tweet,Canada,86,1,2,9,True
+metoo_tweet,India,146,1,2,27,True
+metoo_tweet,United Kingdom,40,1,2,7,True
+metoo_tweet,United States,1211,1,2,184,True
+metoo_tweet,Greece,29,2,2,7,True
+metoo_tweet,Switzerland,39,2,2,11,True
+metoo_tweet,Brazil,29,2,3,10,True
+metoo_tweet,Italy,22,2,3,5,True
+metoo_tweet,Poland,65,2,3,11,True
+metoo_tweet,Germany,179,1,4,17,True
+metoo_tweet,Romania,113,2,4,31,True
+metoo_tweet,Israel,18,5,4,4,True
+metoo_tweet,Pakistan,17,5,4,4,True
+metoo_tweet,Australia,97,5,6,31,True
+metoo_tweet,Denmark,27,5,7,4,True
+metoo_tweet,Spain,29,2,8,6,True
+metoo_tweet,France,144,1,15,41,True
+metoo_tweet,Netherlands,75,2,25,12,True
+metoo_tweet,Finland,43,2,36,6,True
+metoo_tweet,Sweden,440,2,37,30,True
+metoo_tweet,Czech Republic,32,2,38,4,True
+metoo_tweet,Norway,67,3,45,6,True
+metoo_tweet,Belgium,11,1,1,3,False
+metoo_tweet,Chile,9,2,1,4,False
+metoo_tweet,Ireland,10,2,2,3,False
+metoo_tweet,Tuvalu,12,2,2,2,False
+metoo_tweet,Argentina,9,1,3,4,False
+metoo_tweet,Mexico,10,2,3,4,False
+metoo_tweet,Hungary,11,3,3,1,False
+metoo_tweet,Russia,6,4,4,1,False
+metoo_tweet,Turkey,10,12,4,2,False
+metoo_tweet,Colombia,7,7,6,2,False
+metoo_tweet,Philippines,11,2,33,2,False
+nordic_wave,Sweden,163,-4,1,14,True
+nordic_wave,Finland,7,3,4,2,False
+time_poty,Italy,15,0,0,10,True
+time_poty,Australia,15,0,1,5,True
+time_poty,Canada,27,0,1,12,True
+time_poty,Germany,22,0,1,18,True
+time_poty,India,19,0,1,5,True
+time_poty,United States,319,0,1,203,True
+time_poty,France,6,0,-1,3,False
+time_poty,Greece,6,0,-1,5,False
+time_poty,Mexico,6,0,-1,3,False
+time_poty,Spain,8,0,-1,3,False
+time_poty,Sweden,9,0,-1,9,False
+time_poty,United Kingdom,14,0,0,6,False
+deneuve,Australia,40,0,1,8,True
+deneuve,Germany,98,0,1,34,True
+deneuve,Sweden,15,0,1,7,True
+deneuve,Spain,29,1,1,11,True
+deneuve,Brazil,17,1,2,5,True
+deneuve,France,95,1,2,21,True
+deneuve,Switzerland,19,1,2,5,True
+deneuve,United Kingdom,39,1,2,10,True
+deneuve,United States,208,1,2,63,True
+deneuve,India,16,2,3,4,True
+deneuve,Canada,34,0,6,8,True
+deneuve,Italy,23,0,9,5,True
+deneuve,Chile,6,1,0,2,False
+deneuve,Denmark,7,1,0,4,False
+deneuve,Poland,10,1,0,3,False
+deneuve,Argentina,11,1,1,6,False
+deneuve,Hungary,8,1,1,3,False
+deneuve,Netherlands,8,1,1,2,False
+deneuve,Pakistan,6,1,1,3,False
+deneuve,Mexico,10,2,1,3,False
+deneuve,Belgium,10,1,2,3,False
+deneuve,Czech Republic,6,1,2,2,False
+deneuve,Russia,7,3,2,2,False
+deneuve,Estonia,9,6,6,3,False
+deneuve,Romania,13,6,8,5,False
+la_manada,Spain,21,0,0,11,True
+la_manada,France,18,1,1,8,True
+elenao,Brazil,19,2,1,3,True
+kavanaugh,Pakistan,15,-3,-4,3,True
+kavanaugh,United States,790,-6,0,79,True
+kavanaugh,United Kingdom,71,-6,7,8,True
+kavanaugh,Australia,42,-5,7,6,True
+kavanaugh,France,60,-5,7,13,True
+kavanaugh,Canada,67,-3,7,8,True
+kavanaugh,Brazil,17,7,7,3,True
+kavanaugh,Spain,21,7,7,10,True
+kavanaugh,Germany,28,-5,8,8,True
+kavanaugh,Italy,21,0,8,2,True
+kavanaugh,India,50,13,13,13,True
+kavanaugh,Switzerland,17,10,17,4,True
+kavanaugh,Austria,7,-5,-6,3,False
+kavanaugh,Czech Republic,6,-4,-5,2,False
+kavanaugh,Norway,6,-4,-5,4,False
+kavanaugh,Tuvalu,7,-5,-4,2,False
+kavanaugh,Argentina,6,-2,-2,1,False
+kavanaugh,South Africa,8,-1,-1,1,False
+kavanaugh,Uruguay,6,-1,-1,1,False
+kavanaugh,Sweden,11,0,-1,6,False
+kavanaugh,Mexico,6,7,6,2,False
+kavanaugh,Belgium,11,7,7,4,False
+kavanaugh,Israel,8,13,12,2,False
+kavanaugh,Netherlands,9,9,15,2,False
+india_metoo,France,18,-4,-3,8,True
+india_metoo,Pakistan,49,-7,-2,7,True
+india_metoo,Tuvalu,18,-2,-1,2,True
+india_metoo,United States,135,-6,0,17,True
+india_metoo,India,1274,-3,1,125,True
+india_metoo,United Arab Emirates,19,-3,6,3,True
+india_metoo,Belgium,7,-4,-3,3,False
+india_metoo,Brazil,7,-2,-3,4,False
+india_metoo,Sweden,9,-1,-2,4,False
+india_metoo,Canada,13,-2,-1,2,False
+india_metoo,Australia,10,1,0,5,False
+india_metoo,Germany,9,4,4,2,False
+india_metoo,China,10,6,5,3,False
+india_metoo,United Kingdom,12,6,6,2,False
+india_metoo,Bangladesh,10,3,7,2,False
+india_metoo,Spain,7,21,21,4,False
+manresa,Spain,387,-2,0,68,True
+manresa,Argentina,10,-5,0,3,False
+manresa,United States,8,-1,0,3,False
+un_day_2018,France,65,-2,-1,20,True
+un_day_2018,Spain,18,0,-1,4,True
+un_day_2018,Mexico,24,0,0,7,True
+un_day_2018,Argentina,114,-4,1,11,True
+un_day_2018,United Kingdom,57,11,10,55,True
+un_day_2018,United States,33,3,33,10,True
+un_day_2018,Brazil,6,0,1,2,False
+un_day_2018,Paraguay,6,1,1,1,False
+un_day_2018,Peru,6,1,1,1,False
+un_day_2018,Uruguay,8,2,1,2,False
+un_day_2018,India,13,0,21,6,False

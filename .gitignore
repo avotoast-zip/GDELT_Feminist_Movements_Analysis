@@ -1,0 +1,24 @@
+# ---- secrets -------------------------------------------------------------
+.env
+
+# ---- data ----------------------------------------------------------------
+# Excluded for three reasons: size (7.6 GB, GitHub caps files at 100 MB),
+# copyright (the processed files contain full text of news articles), and
+# reproducibility (everything here is regenerable from scripts/ except
+# data/raw/ and data/processed/labeled_articles.csv).
+data/
+
+# ---- staging for deletion ------------------------------------------------
+_to_delete/
+
+# ---- python --------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ---- os ------------------------------------------------------------------
+.DS_Store
+Thumbs.db

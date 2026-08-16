@@ -1,0 +1,191 @@
+country,articles,unique_outlets,articles_per_outlet,top1_outlet_pct,top3_outlet_pct,top10_outlet_pct,HHI,largest_outlet
+United States,59967,3460,17.3,7.2,9.3,13.2,0.0064,iheart.com
+France,17374,284,61.2,5.1,11.1,27.1,0.015,maville.com
+India,16112,240,67.1,14.4,23.9,39.4,0.0341,indiatimes.com
+Mexico,8505,178,47.8,7.0,17.5,38.8,0.0225,lasillarota.com
+Argentina,7664,187,41.0,3.6,9.5,25.8,0.0142,lavoz.com.ar
+Sweden,6245,80,78.1,6.4,17.9,47.9,0.0329,nsd.se
+Canada,5667,305,18.6,4.3,11.9,28.0,0.0134,lapresse.ca
+Germany,5502,244,22.5,6.9,13.2,29.5,0.0154,dw.com
+Brazil,4653,149,31.2,18.5,36.6,56.4,0.0642,globo.com
+Spain,4573,199,23.0,7.2,14.1,29.2,0.0168,20minutos.es
+United Kingdom,4190,376,11.1,13.6,29.2,45.3,0.0375,dailymail.co.uk
+Peru,2997,60,50.0,42.6,56.1,79.1,0.2018,larepublica.pe
+Australia,2948,188,15.7,8.1,21.6,47.1,0.0297,smh.com.au
+Switzerland,2904,77,37.7,16.0,45.6,64.2,0.0789,tdg.ch
+Belgium,2652,50,53.0,22.9,44.2,78.5,0.0974,rtl.be
+Romania,2503,116,21.6,8.6,25.0,50.9,0.037,ziare-pe-net.ro
+Italy,1842,220,8.4,24.8,35.0,52.0,0.074,zazoom.it
+Chile,1694,63,26.9,18.9,30.2,61.7,0.0637,biobiochile.cl
+Nigeria,1349,53,25.5,9.6,24.8,60.6,0.0466,dailypost.ng
+South Korea,1296,49,26.4,11.5,30.6,68.6,0.058,mt.co.kr
+Netherlands,1120,72,15.6,33.0,50.2,75.2,0.1371,nu.nl
+Norway,1117,89,12.6,13.1,29.3,56.0,0.0461,aftenposten.no
+Senegal,1036,16,64.8,39.7,70.8,96.3,0.223,sen360.com
+Colombia,909,61,14.9,12.9,30.7,59.0,0.0509,hsbnoticias.com
+Turkey,887,103,8.6,11.0,17.2,35.1,0.0265,haberler.com
+Bolivia,886,16,55.4,16.9,44.5,95.0,0.1102,paginasiete.bo
+China,864,108,8.0,16.6,35.8,61.9,0.0595,sina.com.cn
+Paraguay,846,13,65.1,28.7,62.5,99.4,0.1745,abc.com.py
+Pakistan,781,22,35.5,32.7,64.9,95.4,0.1853,thenews.com.pk
+Poland,770,112,6.9,7.3,17.7,37.9,0.0235,rp.pl
+Greece,757,69,11.0,10.2,25.2,52.3,0.0404,multi-news.gr
+Russia,742,112,6.6,33.2,47.8,64.8,0.1278,sputniknews.com
+South Africa,703,51,13.8,21.6,42.0,73.3,0.0881,iol.co.za
+Ecuador,681,16,42.6,31.3,59.5,94.3,0.1607,elcomercio.com
+Moldova,611,17,35.9,30.3,79.7,97.2,0.2206,publika.md
+Uruguay,605,18,33.6,19.7,49.1,96.0,0.1233,subrayado.com.uy
+Denmark,593,27,22.0,14.8,38.8,75.5,0.0796,b.dk
+Ukraine,588,93,6.3,10.4,23.3,48.1,0.0348,cosmo.com.ua
+Venezuela,572,51,11.2,12.1,29.7,56.1,0.0485,radiomundial.com.ve
+Austria,560,42,13.3,23.2,45.4,75.4,0.0972,derstandard.at
+Tuvalu,549,47,11.7,20.4,47.2,73.6,0.0976,geo.tv
+Czech Republic,527,64,8.2,10.1,24.3,57.7,0.0436,zpravy.aktualne.cz
+Finland,523,40,13.1,16.8,37.5,67.3,0.072,hbl.fi
+Indonesia,428,26,16.5,37.1,60.7,86.9,0.1844,tribunnews.com
+Ireland,427,28,15.2,26.0,54.8,89.2,0.1372,independent.ie
+Malaysia,388,24,16.2,28.6,60.8,91.0,0.1592,themalaymailonline.com
+Philippines,347,22,15.8,36.3,59.4,87.3,0.1733,inquirer.net
+Israel,328,43,7.6,22.9,48.8,76.8,0.1035,timesofisrael.com
+Mali,323,7,46.1,27.9,64.7,100.0,0.1901,journaldumali.com
+Reunion,307,4,76.8,52.4,98.7,100.0,0.4746,linfo.re
+Bulgaria,299,26,11.5,20.4,44.8,78.6,0.0931,focus-news.net
+Luxembourg,292,11,26.5,49.3,81.5,99.7,0.3032,lessentiel.lu
+El Salvador,273,8,34.1,34.1,75.8,100.0,0.2233,laprensagrafica.com
+New Zealand,269,17,15.8,62.5,77.3,95.9,0.4069,stuff.co.nz
+Portugal,252,33,7.6,17.9,39.7,75.8,0.0818,dn.pt
+Hungary,249,51,4.9,10.4,30.5,62.2,0.0541,aktiv.origo.hu
+Vietnam,247,49,5.0,19.0,31.2,65.6,0.0656,baomoi.com
+Panama,230,12,19.2,28.3,66.5,98.3,0.1852,critica.com.pa
+Niue,230,6,38.3,73.0,96.5,100.0,0.562,kuriren.nu
+Nicaragua,218,10,21.8,47.7,80.3,100.0,0.2891,elnuevodiario.com.ni
+Bangladesh,218,16,13.6,24.3,66.5,94.0,0.1676,clickittefaq.com
+Mauritius,213,5,42.6,43.7,98.1,100.0,0.3872,defimedia.info
+Morocco,211,21,10.0,18.5,44.1,82.9,0.095,bladi.net
+Guinea,209,10,20.9,37.8,68.9,100.0,0.216,guineematin.com
+Ghana,205,12,17.1,36.6,66.8,98.5,0.2041,ghanaweb.com
+Dominican Republic,204,10,20.4,27.9,66.2,100.0,0.1888,acento.com.do
+Tunisia,200,18,11.1,27.0,56.0,93.0,0.1432,webmanagercenter.com
+Japan,196,35,5.6,32.1,55.6,79.6,0.1465,japantimes.co.jp
+Iceland,186,11,16.9,39.2,80.1,99.5,0.2636,ruv.is
+United Arab Emirates,178,9,19.8,56.2,85.4,100.0,0.3718,khaleejtimes.com
+Honduras,173,6,28.8,57.8,90.2,100.0,0.3992,laprensa.hn
+Lithuania,172,14,12.3,24.4,52.9,94.2,0.1326,delfi.lt
+Croatia,164,21,7.8,20.7,42.1,81.7,0.0951,novilist.hr
+Egypt,151,18,8.4,33.1,62.9,93.4,0.1695,dostor.org
+Guatemala,141,14,10.1,19.9,56.0,97.2,0.1371,lahora.gt
+Cameroon,139,9,15.4,81.3,93.5,100.0,0.6723,journalducameroun.com
+Singapore,123,15,8.2,51.2,64.2,92.7,0.2847,straitstimes.com
+Congo,106,5,21.2,84.9,98.1,100.0,0.7362,journaldebrazza.com
+Cuba,99,7,14.1,80.8,90.9,100.0,0.6609,prensa-latina.cu
+Syria,94,15,6.3,28.7,56.4,92.6,0.1476,quickworldnews.com
+Lebanon,85,11,7.7,30.6,67.1,97.6,0.1848,dailystar.com.lb
+Kenya,84,10,8.4,29.8,70.2,100.0,0.1978,nation.co.ke
+Slovak Republic,83,23,3.6,14.5,33.7,71.1,0.069,24hod.sk
+Macedonia,78,10,7.8,61.5,78.2,100.0,0.4017,time.mk
+Ivory Coast,75,6,12.5,60.0,89.3,100.0,0.4187,koaci.com
+Slovenia,75,13,5.8,53.3,72.0,96.0,0.3138,rtvslo.si
+Hong Kong,74,12,6.2,51.4,82.4,97.3,0.3207,hket.com
+Estonia,73,20,3.6,16.4,45.2,83.6,0.0963,ohtuleht.ee
+Jordan,68,7,9.7,33.8,73.5,100.0,0.2219,khaberni.com
+Costa Rica,67,8,8.4,37.3,86.6,100.0,0.2845,crhoy.com
+Qatar,62,5,12.4,62.9,96.8,100.0,0.4641,thepeninsulaqatar.com
+Jamaica,62,5,12.4,54.8,90.3,100.0,0.3944,jamaicaobserver.com
+Saudi Arabia,60,16,3.8,46.7,65.0,90.0,0.2483,saudigazette.com.sa
+Serbia,55,14,3.9,43.6,69.1,92.7,0.2337,naslovi.net
+Thailand,53,7,7.6,77.4,88.7,100.0,0.6091,bangkokpost.com
+Monaco,52,2,26.0,96.2,100.0,100.0,0.926,monacomatin.mc
+Uganda,48,8,6.0,47.9,81.2,100.0,0.2951,monitor.co.ug
+Chad,47,1,47.0,100.0,100.0,100.0,1.0,journaldutchad.com
+Algeria,45,11,4.1,22.2,44.4,95.6,0.117,liberte-algerie.com
+Sri Lanka,44,14,3.1,25.0,50.0,90.9,0.125,dailymirror.lk
+Armenia,43,11,3.9,55.8,74.4,97.7,0.3423,panorama.am
+Zimbabwe,41,14,2.9,17.1,48.8,90.2,0.1101,nehandaradio.com
+French Polynesia,41,2,20.5,78.0,100.0,100.0,0.6573,fenuanews.com
+Belarus,41,7,5.9,39.0,85.4,100.0,0.2802,belta.by
+Trinidad and Tobago,40,6,6.7,27.5,75.0,100.0,0.2162,guardian.co.tt
+Nepal,40,4,10.0,65.0,97.5,100.0,0.4763,thehimalayantimes.com
+Mozambique,37,2,18.5,97.3,100.0,100.0,0.9474,blogs.com
+Cyprus,36,9,4.0,27.8,61.1,100.0,0.1682,cyprus-mail.com
+Democratic Republic of the Congo,36,6,6.0,66.7,86.1,100.0,0.4722,mediacongo.net
+Haiti,36,6,6.0,69.4,88.9,100.0,0.5062,lenouvelliste.com
+Latvia,36,8,4.5,30.6,63.9,100.0,0.1821,delfi.lv
+Taiwan,34,12,2.8,17.6,50.0,94.1,0.1194,eyeontaiwan.com
+Burkina Faso,27,9,3.0,22.2,59.3,100.0,0.155,sidwaya.bf
+Kazakhstan,26,9,2.9,23.1,57.7,100.0,0.1479,inform.kz
+Afghanistan,24,6,4.0,29.2,75.0,100.0,0.2222,bakhtarnews.com.af
+Puerto Rico,23,1,23.0,100.0,100.0,100.0,1.0,metro.pr
+Samoa,22,2,11.0,90.9,100.0,100.0,0.8347,oane.ws
+Central African Republic,22,2,11.0,90.9,100.0,100.0,0.8347,journaldebangui.com
+Georgia,19,4,4.8,57.9,89.5,100.0,0.4017,parliament.ge
+Brunei,18,3,6.0,50.0,100.0,100.0,0.3765,borneobulletin.com.bn
+Azerbaijan,17,6,2.8,35.3,76.5,100.0,0.2457,ru.apa.az
+Guyana,17,2,8.5,82.4,100.0,100.0,0.7093,stabroeknews.com
+Bosnia-Herzegovina,16,7,2.3,25.0,68.8,100.0,0.1875,federalna.ba
+Iraq,16,7,2.3,31.2,68.8,100.0,0.2031,iraqsun.com
+Gambia,15,3,5.0,60.0,100.0,100.0,0.4489,thepoint.gm
+Gabon,15,2,7.5,86.7,100.0,100.0,0.7689,infosplusgabon.com
+Macau,13,3,4.3,46.2,100.0,100.0,0.3609,macaudailytimes.com.mo
+Malta,13,2,6.5,84.6,100.0,100.0,0.7396,timesofmalta.com
+Iran,13,7,1.9,23.1,53.8,100.0,0.1598,iranherald.com
+Jersey,12,1,12.0,100.0,100.0,100.0,1.0,jerseyeveningpost.com
+Kuwait,12,4,3.0,58.3,91.7,100.0,0.4028,kuwaittimes.net
+Libya,12,1,12.0,100.0,100.0,100.0,1.0,alwasat.ly
+Sierra Leone,11,3,3.7,63.6,100.0,100.0,0.4876,sierraleonetimes.com
+Togo,11,2,5.5,63.6,100.0,100.0,0.5372,togosite.com
+Guam,11,1,11.0,100.0,100.0,100.0,1.0,guampdn.com
+New Caledonia,11,1,11.0,100.0,100.0,100.0,1.0,lnc.nc
+Albania,11,4,2.8,45.5,81.8,100.0,0.3058,kohajone.com
+Benin,10,2,5.0,80.0,100.0,100.0,0.68,lanouvelletribune.info
+Fiji,9,3,3.0,55.6,100.0,100.0,0.4074,fijitimes.com
+Yemen,9,2,4.5,77.8,100.0,100.0,0.6543,hournews.net
+Kyrgyzstan,9,3,3.0,44.4,100.0,100.0,0.4074,kabar.kg
+Malawi,9,4,2.2,55.6,88.9,100.0,0.3827,nyasatimes.com
+Myanmar,9,2,4.5,55.6,100.0,100.0,0.5062,mizzima.com
+Cambodia,8,4,2.0,25.0,75.0,100.0,0.25,khmertimeskh.com
+South Sudan,8,2,4.0,50.0,100.0,100.0,0.5,unmissions.org
+Bahamas,8,4,2.0,37.5,87.5,100.0,0.3125,tribune242.com
+Martinique,8,2,4.0,87.5,100.0,100.0,0.7812,montraykreyol.org
+Bahrain,7,4,1.8,28.6,85.7,100.0,0.2653,gdnonline.com
+Somalia,7,2,3.5,57.1,100.0,100.0,0.5102,amisom-au.org
+Barbados,7,3,2.3,42.9,100.0,100.0,0.3878,nationnews.com
+Oman,7,4,1.8,57.1,85.7,100.0,0.3878,omanobserver.om
+Suriname,7,2,3.5,85.7,100.0,100.0,0.7551,dwtonline.com
+Montenegro,6,2,3.0,83.3,100.0,100.0,0.7222,redbrick.me
+Bermuda,5,1,5.0,100.0,100.0,100.0,1.0,royalgazette.com
+Madagascar,5,3,1.7,60.0,100.0,100.0,0.44,midi-madagasikara.mg
+Namibia,5,3,1.7,40.0,100.0,100.0,0.36,informante.web.na
+Papua New Guinea,4,1,4.0,100.0,100.0,100.0,1.0,emtv.com.pg
+Andorra,4,2,2.0,75.0,100.0,100.0,0.625,bondia.ad
+Burundi,4,2,2.0,75.0,100.0,100.0,0.625,burundi-agnews.org
+Saint Lucia,4,2,2.0,75.0,100.0,100.0,0.625,stlucianewsonline.com
+North Korea,4,1,4.0,100.0,100.0,100.0,1.0,northkoreatimes.com
+Grenada,3,3,1.0,33.3,100.0,100.0,0.3333,thegrenadainformer.com
+Zambia,3,2,1.5,66.7,100.0,100.0,0.5556,lusakatimes.com
+Mauritania,3,2,1.5,66.7,100.0,100.0,0.5556,cridem.org
+Antigua and Barbuda,3,1,3.0,100.0,100.0,100.0,1.0,sermitsiaq.ag
+Mongolia,3,2,1.5,66.7,100.0,100.0,0.5556,olloo.mn
+Kosovo,3,1,3.0,100.0,100.0,100.0,1.0,gazetatribuna.com
+Belize,3,2,1.5,66.7,100.0,100.0,0.5556,breakingbelizenews.com
+Comoros,3,1,3.0,100.0,100.0,100.0,1.0,alwatwan.net
+Seychelles,3,1,3.0,100.0,100.0,100.0,1.0,seychellesnewsagency.com
+San Marino,3,2,1.5,66.7,100.0,100.0,0.5556,smtvsanmarino.sm
+Tajikistan,2,2,1.0,50.0,100.0,100.0,0.5,avesta.tj
+Bhutan,2,1,2.0,100.0,100.0,100.0,1.0,kuenselonline.com
+Virgin Islands,2,1,2.0,100.0,100.0,100.0,1.0,virginislandsdailynews.com
+British Indian Ocean Territory,2,1,2.0,100.0,100.0,100.0,1.0,meduza.io
+Eritrea,2,1,2.0,100.0,100.0,100.0,1.0,shabait.com
+Rwanda,2,2,1.0,50.0,100.0,100.0,0.5,newtimes.co.rw
+Anguilla,1,1,1.0,100.0,100.0,100.0,1.0,theanguillian.com
+Solomon Islands,1,1,1.0,100.0,100.0,100.0,1.0,solomontimes.com
+Cook Islands,1,1,1.0,100.0,100.0,100.0,1.0,cookislandsnews.com
+Angola,1,1,1.0,100.0,100.0,100.0,1.0,portaldeangola.com
+Uzbekistan,1,1,1.0,100.0,100.0,100.0,1.0,vesti.uz
+Mayotte,1,1,1.0,100.0,100.0,100.0,1.0,mayottehebdo.com
+Liberia,1,1,1.0,100.0,100.0,100.0,1.0,bushchicken.com
+Tanzania,1,1,1.0,100.0,100.0,100.0,1.0,thecitizen.co.tz
+Ethiopia,1,1,1.0,100.0,100.0,100.0,1.0,geeskaafrika.com
+Niger,1,1,1.0,100.0,100.0,100.0,1.0,actuniger.com
+Cape Verde,1,1,1.0,100.0,100.0,100.0,1.0,asemana.publ.cv
+Gibraltar,1,1,1.0,100.0,100.0,100.0,1.0,vox.gi
+Saint Vincent and the Grenadines,1,1,1.0,100.0,100.0,100.0,1.0,searchlight.vc

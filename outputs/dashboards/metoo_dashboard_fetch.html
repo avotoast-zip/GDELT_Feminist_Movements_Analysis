@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>#MeToo corpus - fetching and duplicates</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F0F0EC;color:#17171E;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;line-height:1.45}
+.wrap{max-width:1060px;margin:0 auto;padding:16px 16px 60px}
+header{border-bottom:3px solid #17171E;padding-bottom:10px}
+.eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#A2196B;margin-bottom:6px;font-family:monospace}
+h1{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+h1 span{color:#5A5A66;font-weight:400}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#DCDCD4;border:1px solid #DCDCD4;margin:14px 0}
+.kpi{background:#FCFCFA;padding:11px 9px}
+.kpi b{display:block;font-size:20px;font-weight:900;letter-spacing:-.02em}
+.kpi small{font-size:10px;color:#5A5A66;line-height:1.3;display:block}
+.kpi.g b{color:#3E6B73}.kpi.r b{color:#B5432A}.kpi.a b{color:#A2196B}
+section{margin-top:22px}
+h2{font-size:13px;font-weight:700;margin-bottom:2px}
+.sub{font-size:11px;color:#5A5A66;margin-bottom:8px;max-width:78ch}
+.card{background:#FCFCFA;border:1px solid #DCDCD4;padding:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#17171E;color:#F0F0EC;padding:6px 8px;text-align:left;font-weight:600;font-size:10.5px;position:sticky;top:0}
+td{padding:4px 8px;border-bottom:1px solid #E6E6E0}
+td.r{text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#EDEFEA}
+.scroll{max-height:400px;overflow-y:auto;border:1px solid #DCDCD4}
+.bar{height:15px;background:#3E6B73;display:inline-block;vertical-align:middle;border-radius:2px}
+.bar.r{background:#B5432A}.bar.a{background:#A2196B}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{border-left:3px solid #A2196B;padding:10px 14px;background:#FCFCFA;font-size:11.5px;color:#5A5A66;margin-top:12px;line-height:1.55}
+.note b{color:#17171E}
+.big{font-size:26px;font-weight:900;letter-spacing:-.02em}
+footer{margin-top:26px;padding-top:12px;border-top:1px solid #DCDCD4;font-family:monospace;font-size:10.5px;color:#8A8A92}
+.pos{color:#3E6B73;font-weight:700}.neg{color:#B5432A;font-weight:700}
+</style></head><body><div class="wrap">
+<header>
+<div class="eyebrow">Stage 2 - after collection - fetching and duplicate removal</div>
+<h1>Downloading the articles <span>and removing duplicates</span></h1>
+</header>
+<div class="kpis" id="kpis"></div>
+
+<section><h2>What happened to each link</h2>
+<p class="sub">The links are 6 to 9 years old. Only half the failures are dead pages. Blocked and error results can still be recovered.</p>
+<div class="card"><table id="outcome"></table></div></section>
+
+<section><h2>Duplicate articles found at three thresholds</h2>
+<p class="sub">Two articles are compared by how much of their wording they share. 100% means the text is identical. 80% allows a changed headline or a trimmed paragraph.</p>
+<div class="card"><table id="thresh"></table></div>
+<div class="note" id="threshnote"></div></section>
+
+<section><h2>Which sites produced the most duplicate copies</h2>
+<p class="sub">Copies is how many articles that site contributed to duplicate groups. Stories is how many distinct stories those copies represent. Redundant is the difference.</p>
+<div class="card"><table id="dom"></table></div></section>
+
+<div class="grid2">
+<section><h2>Download success by country</h2>
+<p class="sub">Countries with 300 or more links tried. Sorted worst first.</p>
+<div class="scroll"><table id="ctry"></table></div></section>
+<section><h2>How the corpus changed</h2>
+<p class="sub">Share of all articles before and after downloading.</p>
+<div class="card"><table id="shift"></table></div>
+<div style="height:10px"></div>
+<h2>Download success by year published</h2>
+<div class="card"><table id="year"></table></div></section>
+</div>
+
+<div class="note" id="stalenote"></div>
+<footer id="foot"></footer></div>
+<script>
+const D={"attempted":205528,"downloaded":107514,"rate":52.3,"unique_after_dedupe":76925,"dupes_removed":33940,"stale":8312,"stale_pct":7.7,"hash_before":60.2,"hash_after":52.8,"outcome":{"Downloaded":107514,"Page is gone (404, 410)":51140,"Website blocked us (403, 429)":23942,"Network or server error":14259,"No usable text":7971},"by_country":[{"c":"Reunion","a":304,"g":9,"r":3.0},{"c":"Netherlands","a":1105,"g":289,"r":26.2},{"c":"Venezuela","a":537,"g":142,"r":26.4},{"c":"Senegal","a":935,"g":291,"r":31.1},{"c":"Malaysia","a":388,"g":127,"r":32.7},{"c":"Bolivia","a":822,"g":277,"r":33.7},{"c":"United States","a":58400,"g":23768,"r":40.7},{"c":"Ireland","a":416,"g":180,"r":43.3},{"c":"South Korea","a":686,"g":307,"r":44.8},{"c":"Moldova","a":610,"g":273,"r":44.8},{"c":"Belgium","a":2597,"g":1163,"r":44.8},{"c":"South Africa","a":678,"g":305,"r":45.0},{"c":"Sweden","a":5534,"g":2588,"r":46.8},{"c":"Ecuador","a":674,"g":328,"r":48.7},{"c":"Canada","a":5590,"g":2745,"r":49.1},{"c":"Germany","a":5364,"g":2644,"r":49.3},{"c":"Italy","a":1818,"g":920,"r":50.6},{"c":"Austria","a":538,"g":284,"r":52.8},{"c":"Philippines","a":333,"g":181,"r":54.4},{"c":"Colombia","a":897,"g":490,"r":54.6},{"c":"Tuvalu","a":541,"g":298,"r":55.1},{"c":"Denmark","a":584,"g":331,"r":56.7},{"c":"Nigeria","a":1335,"g":781,"r":58.5},{"c":"Switzerland","a":2751,"g":1609,"r":58.5},{"c":"Israel","a":324,"g":190,"r":58.6},{"c":"India","a":15773,"g":9241,"r":58.6},{"c":"Mexico","a":8105,"g":4767,"r":58.8},{"c":"Australia","a":2584,"g":1536,"r":59.4},{"c":"Greece","a":713,"g":439,"r":61.6},{"c":"Finland","a":511,"g":319,"r":62.4},{"c":"China","a":823,"g":514,"r":62.5},{"c":"Romania","a":2491,"g":1574,"r":63.2},{"c":"France","a":16959,"g":11228,"r":66.2},{"c":"Norway","a":1113,"g":757,"r":68.0},{"c":"Paraguay","a":845,"g":577,"r":68.3},{"c":"Poland","a":763,"g":524,"r":68.7},{"c":"Brazil","a":4549,"g":3199,"r":70.3},{"c":"Peru","a":2705,"g":1901,"r":70.3},{"c":"Chile","a":1680,"g":1181,"r":70.3},{"c":"United Kingdom","a":4124,"g":2907,"r":70.5},{"c":"Uruguay","a":595,"g":435,"r":73.1},{"c":"Ukraine","a":585,"g":429,"r":73.3},{"c":"Argentina","a":7319,"g":5574,"r":76.2},{"c":"Russia","a":738,"g":564,"r":76.4},{"c":"Pakistan","a":773,"g":595,"r":77.0},{"c":"Spain","a":4495,"g":3598,"r":80.0},{"c":"Turkey","a":821,"g":657,"r":80.0},{"c":"Czech Republic","a":427,"g":351,"r":82.2},{"c":"Indonesia","a":425,"g":399,"r":93.9}],"by_year":[{"y":2017,"a":23180,"r":50.8},{"y":2018,"a":108879,"r":47.8},{"y":2019,"a":73469,"r":59.4}],"shift":[{"c":"Afghanistan","b":0.0,"a":0.0,"d":-0.0},{"c":"Albania","b":0.0,"a":0.0,"d":0.0},{"c":"Algeria","b":0.0,"a":0.0,"d":-0.0},{"c":"Andorra","b":0.0,"a":0.0,"d":0.0},{"c":"Angola","b":0.0,"a":0.0,"d":-0.0},{"c":"Anguilla","b":0.0,"a":0.0,"d":0.0},{"c":"Antigua and Barbuda","b":0.0,"a":0.0,"d":0.0},{"c":"Argentina","b":4.0,"a":5.7,"d":1.6},{"c":"Armenia","b":0.0,"a":0.0,"d":-0.0},{"c":"Australia","b":1.4,"a":1.6,"d":0.1},{"c":"Austria","b":0.3,"a":0.3,"d":-0.0},{"c":"Azerbaijan","b":0.0,"a":0.0,"d":0.0}],"thresholds":{"100":{"removed":22417,"unique":86360},"90":{"removed":28501,"unique":80276},"80":{"removed":31435,"unique":77342}},"domains":[{"outlet":"iheart.com","copies":2598,"stories":40,"country":"United States","redundant":2558},{"outlet":"maville.com","copies":504,"stories":143,"country":"France","redundant":361},{"outlet":"indiatimes.com","copies":452,"stories":116,"country":"India","redundant":336},{"outlet":"larepublica.pe","copies":423,"stories":149,"country":"Peru","redundant":274},{"outlet":"biobiochile.cl","copies":260,"stories":1,"country":"Chile","redundant":259},{"outlet":"yahoo.com","copies":317,"stories":143,"country":"United States","redundant":174},{"outlet":"totalnews.com.ar","copies":168,"stories":1,"country":"Argentina","redundant":167},{"outlet":"tdg.ch","copies":398,"stories":234,"country":"Switzerland","redundant":164},{"outlet":"24heures.ch","copies":358,"stories":220,"country":"Switzerland","redundant":138},{"outlet":"efe.com","copies":133,"stories":2,"country":"Spain","redundant":131},{"outlet":"elimparcial.com","copies":117,"stories":1,"country":"Mexico","redundant":116},{"outlet":"scotcampus.com","copies":102,"stories":1,"country":"UNKNOWN","redundant":101},{"outlet":"etcanada.com","copies":104,"stories":4,"country":"United States","redundant":100},{"outlet":"indexstiri.ro","copies":100,"stories":1,"country":"Romania","redundant":99},{"outlet":"palpalindia.com","copies":94,"stories":1,"country":"India","redundant":93},{"outlet":"elsoldepuebla.com.mx","copies":99,"stories":8,"country":"UNKNOWN","redundant":91},{"outlet":"tribuna.com.mx","copies":89,"stories":1,"country":"UNKNOWN","redundant":88},{"outlet":"b.dk","copies":88,"stories":1,"country":"Denmark","redundant":87}]};
+document.getElementById('kpis').innerHTML=`
+<div class="kpi"><b>${D.attempted.toLocaleString()}</b><small>links tried</small></div>
+<div class="kpi g"><b>${D.downloaded.toLocaleString()}</b><small>downloaded</small></div>
+<div class="kpi"><b>${D.rate}%</b><small>success rate</small></div>
+<div class="kpi r"><b>${D.dupes_removed.toLocaleString()}</b><small>duplicate copies</small></div>
+<div class="kpi a"><b>${D.unique_after_dedupe.toLocaleString()}</b><small>unique articles</small></div>
+<div class="kpi r"><b>${D.stale_pct}%</b><small>wrong page served</small></div>`;
+
+let o='<tr><th>Result</th><th class=r>Articles</th><th class=r>Share</th><th style="width:38%"></th></tr>';
+const tot=D.attempted, mx=Math.max(...Object.values(D.outcome));
+for(const [k,v] of Object.entries(D.outcome)){
+  const cls=k.startsWith('Downloaded')?'':'r';
+  o+=`<tr><td>${k}</td><td class=r>${v.toLocaleString()}</td><td class=r>${(v/tot*100).toFixed(1)}%</td>
+  <td><span class="bar ${cls}" style="width:${v/mx*100}%"></span></td></tr>`;}
+document.getElementById('outcome').innerHTML=o;
+
+if(D.thresholds){
+  let t='<tr><th>Overlap required</th><th class=r>Duplicate copies found</th><th class=r>Unique articles left</th><th class=r>Share removed</th></tr>';
+  const order=['100','90','80'];
+  const lbl={'100':'100% (identical text)','90':'90% or more','80':'80% or more'};
+  for(const k of order){ if(!D.thresholds[k])continue;
+    const r=D.thresholds[k];
+    t+=`<tr><td><b>${lbl[k]}</b></td><td class=r>${r.removed.toLocaleString()}</td>
+    <td class=r>${r.unique.toLocaleString()}</td>
+    <td class=r>${(r.removed/D.downloaded*100).toFixed(1)}%</td></tr>`;}
+  document.getElementById('thresh').innerHTML=t;
+  const a=D.thresholds['100'],c=D.thresholds['80'];
+  document.getElementById('threshnote').innerHTML=
+   `<b>How to read this.</b> ${a?a.removed.toLocaleString():'-'} articles are word-for-word identical to another article.
+    Loosening to 80% finds ${c?(c.removed-a.removed).toLocaleString():'-'} more, which are the same story with a changed
+    headline or a trimmed paragraph. The corpus uses the 80% cutoff.`;
+} else {
+  document.getElementById('thresh').innerHTML='<tr><td>Threshold table not computed. Run without --skip-thresholds.</td></tr>';
+}
+
+let dm='<tr><th>#</th><th>Site</th><th>Country</th><th class=r>Copies</th><th class=r>Stories</th><th class=r>Redundant</th><th style="width:26%"></th></tr>';
+const dmx=D.domains.length?D.domains[0].redundant:1;
+D.domains.forEach((d,i)=>{dm+=`<tr><td>${i+1}</td><td><b>${d.outlet}</b></td><td>${d.country||''}</td>
+ <td class=r>${d.copies.toLocaleString()}</td><td class=r>${d.stories.toLocaleString()}</td>
+ <td class=r><b>${d.redundant.toLocaleString()}</b></td>
+ <td><span class="bar r" style="width:${d.redundant/dmx*100}%"></span></td></tr>`;});
+document.getElementById('dom').innerHTML=dm;
+
+let ct='<tr><th>Country</th><th class=r>Tried</th><th class=r>Got</th><th class=r>Rate</th><th style="width:30%"></th></tr>';
+D.by_country.forEach(c=>{ct+=`<tr><td>${c.c}</td><td class=r>${c.a.toLocaleString()}</td>
+ <td class=r>${c.g.toLocaleString()}</td><td class=r><b>${c.r}%</b></td>
+ <td><span class="bar" style="width:${c.r}%"></span></td></tr>`;});
+document.getElementById('ctry').innerHTML=ct;
+
+let sh='<tr><th>Country</th><th class=r>Before</th><th class=r>After</th><th class=r>Change</th></tr>';
+D.shift.forEach(s=>{const cl=s.d>=0?'pos':'neg';
+ sh+=`<tr><td>${s.c}</td><td class=r>${s.b.toFixed(1)}%</td><td class=r>${s.a.toFixed(1)}%</td>
+ <td class="r ${cl}">${s.d>=0?'+':''}${s.d.toFixed(1)}pp</td></tr>`;});
+document.getElementById('shift').innerHTML=sh;
+
+let yr='<tr><th>Year</th><th class=r>Tried</th><th class=r>Rate</th><th style="width:34%"></th></tr>';
+D.by_year.forEach(y=>{yr+=`<tr><td>${y.y}</td><td class=r>${y.a.toLocaleString()}</td>
+ <td class=r><b>${y.r}%</b></td><td><span class="bar" style="width:${y.r}%"></span></td></tr>`;});
+document.getElementById('year').innerHTML=yr;
+
+document.getElementById('stalenote').innerHTML=
+ `<b>Pages that were not really articles.</b> ${D.stale.toLocaleString()} downloaded articles (${D.stale_pct}%)
+  mention a year between 2023 and 2026, even though every article was published between 2017 and 2019.
+  The original page was deleted and the website served its current content instead. These should be
+  filtered out before any text analysis.<br><br>
+  <b>Hashtag share.</b> Before downloading, ${D.hash_before}% of articles had matched a hashtag.
+  After downloading it is ${D.hash_after}%. Hashtag articles were harder to download than
+  general-vocabulary ones, so the surviving set leans further toward general vocabulary.`;
+
+document.getElementById('foot').textContent=
+ 'FADS  ·  #MeToo corpus  ·  fetching and duplicate removal  ·  generated '+new Date().toISOString().slice(0,10);
+</script></body></html>

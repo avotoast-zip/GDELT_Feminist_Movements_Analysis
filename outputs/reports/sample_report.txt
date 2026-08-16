@@ -1,0 +1,18 @@
+
+==============================================================
+IS THE GENERIC-VOCABULARY MATERIAL ABOUT THE MOVEMENT?
+==============================================================
+  HASHTAG   n= 199   about the movement:  180   90.5%   [95% CI 86-94]
+  GENERIC   n= 199   about the movement:   34   17.1%   [95% CI 12-23]
+
+  Of ~50,700 fetched generic-matched articles, roughly
+  8,662 are movement coverage and 42,037 are not.
+
+STANCE among articles about the movement:
+  support            96   44.9%
+  neutral            95   44.4%
+  backlash           23   10.7%
+
+SPOT-CHECK before you present this:
+  open sample_labeled.csv, read movement_reasoning for 10 rows
+  where match_type=generic and is_about_movement=False.

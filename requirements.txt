@@ -1,0 +1,30 @@
+# Core
+pandas
+numpy
+
+# Keyword matching (scripts/02)
+pyahocorasick
+regex
+
+# Fetching (scripts/06, 07, 07b)
+trafilatura
+requests
+tqdm
+
+# Deduplication (scripts/08)
+datasketch
+
+# Profiling and topic modelling (scripts/09, 17, 21)
+langdetect
+scikit-learn
+matplotlib
+wordcloud
+ftfy
+
+# LLM labelling (scripts/07, 13)
+google-genai
+python-dotenv
+
+# Map geometry — only needed once, to regenerate assets/geo/*.json.
+# The generated files are committed, so this is optional.
+# geopandas

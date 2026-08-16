@@ -1,0 +1,65 @@
+LDA TOPIC MODELLING
+============================================================
+articles used: 80,923
+
+MODE: separate model per language (en, es, fr, pt, de, sv)
+
+--- EN  n=25,000 ---
+  Topic 1: allegations, harassment, court, state, former, investigation, accused, case, akbar, kavanaugh, house, alleged
+  Topic 2: music, kelly, song, industry, show, best, performance, star, awards, media, singer, night
+  Topic 3: harassment, men, assault, workplace, many, sex, people, victims, company, work, employees, male
+  Topic 4: harassment, allegations, accused, film, actor, media, india, industry, director, statement, actress, misconduct
+  Topic 5: police, court, case, rape, delhi, nirbhaya, death, india, justice, milano, singh, accused
+  Topic 6: trump, weinstein, president, hollywood, harvey, harassment, clinton, burke, assault, men, york, allegations
+  Topic 7: like, people, men, know, think, don, now, get, way, even, woman, man
+  Topic 8: violence, abuse, harassment, university, gender, students, public, victims, people, social, country, support
+
+--- ES  n=18,675 ---
+  Topic 1: hombres, sociales, redes, país, feminista, trabajo, política, estados, campaña, presidente, tema, mujer
+  Topic 2: sexual, acoso, metoo, movimiento, sexuales, abuso, abusos, sido, acusaciones, weinstein, actriz, manada
+  Topic 3: violencia, género, víctimas, casos, mujer, nacional, estado, ley, feminicidio, cada, atención, protección
+  Topic 4: violencia, género, igualdad, madrid, vox, gobierno, machista, ayuntamiento, internacional, partido, córdoba, lucha
+  Topic 5: feminicidio, estado, puebla, autoridades, universidad, investigación, político, violador, caso, justicia, fiscalãa, estudiante
+  Topic 6: casa, familia, madre, estaba, hija, mujer, justicia, vida, tenía, hace, vez, hacer
+  Topic 7: mujer, pareja, cuerpo, víctima, policía, hombre, joven, femicidio, casa, lugar, luego, feminicidio
+  Topic 8: delito, prisión, víctima, fiscal, juicio, fiscalía, caso, audiencia, penal, juez, femicidio, tribunal
+
+--- FR  n=15,023 ---
+  Topic 1: femmes, comme, aussi, harcèlement, hommes, victimes, elles, violences, contre, peut, bien, sexuelles
+  Topic 2: weinstein, femmes, harvey, metoo, accusé, accusations, producteur, actrice, mouvement, aussi, york, américain
+  Topic 3: victime, cour, fille, jeune, homme, accusé, prison, ils, procès, police, devant, policiers
+  Topic 4: jeune, garde, examen, vue, enquête, femme, parquet, plainte, homme, paris, judiciaire, placé
+  Topic 5: harcèlement, enquête, justice, sexuel, balancetonporc, muller, sandra, assange, gilbert, contre, ancien, tribunal
+  Topic 6: réalisateur, adèle, haenel, polanski, actrice, film, roman, christophe, justice, ruggia, sexuel, harcèlement
+  Topic 7: ramadan, tariq, plainte, femme, neymar, paris, depuis, suisse, contre, enquête, islamologue, ayari
+  Topic 8: plainte, enquête, darmanin, ministre, plaignante, accusations, suite, parquet, contre, femme, ronaldo, paris
+
+--- PT  n=3,354 ---
+  Topic 1: justiça, crime, vítima, tribunal, júri, acusado, feminicídio, defesa, réu, julgamento, juiz, público
+  Topic 2: mulheres, sobre, dia, pessoas, violência, muito, gente, ainda, sociedade, campanha, nós, país
+  Topic 3: comentários, vítima, tatiane, advogada, crime, polícia, defesa, felipe, prédio, paraná, após, dia
+  Topic 4: sexual, mulheres, assédio, metoo, sobre, movimento, ter, muito, atriz, homens, pessoas, acusações
+  Topic 5: feminicídio, violência, lei, mulheres, crime, doméstica, justiça, maria, penha, projeto, pena, crimes
+  Topic 6: violência, mulheres, casos, feminicídio, vítimas, estado, segurança, brasil, segundo, dados, gênero, número
+  Topic 7: letra, brasileira, seleção, música, série, divulgação, primeira, neste, domingo, vôlei, melhor, feminina
+  Topic 8: polícia, crime, vítima, casa, feminicídio, estava, segundo, suspeito, caso, após, homem, preso
+
+--- DE  n=2,734 ---
+  Topic 1: belästigung, man, sexuelle, männer, unter, wurde, gewalt, frau, sei, debatte, viele, immer
+  Topic 2: man, debatte, zeit, gibt, mich, film, immer, deutschland, wedel, schon, jetzt, sei
+  Topic 3: jahres, bewegung, kinder, person, übergriffe, männer, swift, trump, seit, magazin, gemeinsam, weinstein
+  Topic 4: weinstein, vorwürfe, harvey, wurde, bewegung, sexuelle, york, hollywood, sei, sexueller, unter, übergriffe
+  Topic 5: trump, präsident, donald, mueller, russland, trumps, ermittlungen, hexenjagd, sei, washington, worden, präsidenten
+  Topic 6: www, besonders, jetzt, prozent, http, erste, zeigen, aktien, ots, presseportal, newsroom, viele
+  Topic 7: deneuve, catherine, berlinale, sexuelle, debatte, false, freiheit, frankreich, csd, berlin, interview, true
+  Topic 8: trump, präsident, donald, ukraine, andrej, bachelor, newsblog, demokraten, biden, selenskyj, jennifer, netanjahu
+
+--- SV  n=2,079 ---
+  Topic 1: arbetar, svt, läs, stå, kampanjen, miljoner, fakta, svårt, relevant, berätta, sverige, sant
+  Topic 2: mån, trump, oktober, därefter, vår, fram, emma, nya, ingen, skriver, usa, årets
+  Topic 3: wallin, virtanen, cissi, fredrik, medier, aftonbladet, anklagelserna, flera, oktober, förtal, enligt, sociala
+  Topic 4: akademien, kulturprofilen, svenska, två, mannen, våldtäkt, arnault, fall, sara, hurtig, dagens, björn
+  Topic 5: vittnar, skriver, svenska, upprop, flera, uppropet, kvinnliga, oktober, kampanjen, berättar, några, senare
+  Topic 6: män, någon, varit, utan, allt, göra, tror, gör, kanske, bli, ser, blev
+  Topic 7: nilsson, kvinnan, stefan, enligt, flera, fick, skriver, rörelsen, varit, ryssland, uppropet, samtidigt
+  Topic 8: våld, procent, män, sverige, fram, rörelsen, kvinnors, uppropet, fler, enligt, göra, sexuellt

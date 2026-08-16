@@ -1,0 +1,489 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>#MeToo Global Coverage: Grand Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F0F0EC;color:#17171E;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;line-height:1.45}
+.wrap{max-width:1180px;margin:0 auto;padding:16px 16px 60px}
+header{border-bottom:3px solid #17171E;padding-bottom:10px}
+.eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#A2196B;margin-bottom:6px;font-family:monospace}
+h1{font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.1}h1 span{color:#5A5A66;font-weight:400}
+.updated{font-size:10.5px;color:#8A8A92;font-family:monospace;margin-top:4px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#DCDCD4;border:1px solid #DCDCD4;margin:14px 0}
+.kpi{background:#FCFCFA;padding:11px 9px}.kpi b{display:block;font-size:21px;font-weight:900;letter-spacing:-.02em}
+.kpi small{font-size:10px;color:#5A5A66;line-height:1.3;display:block}
+.kpi.s b{color:#3E6B73}.kpi.bl b{color:#B5432A}.kpi.ac b{color:#A2196B}
+.navtabs{display:flex;flex-wrap:wrap;margin:14px 0 0;border:1px solid #17171E;width:fit-content}
+.navtab{padding:7px 15px;cursor:pointer;font-size:11.5px;font-family:monospace;background:none;border:0;color:#17171E;border-right:1px solid #17171E}
+.navtab:last-child{border-right:0}.navtab.on{background:#17171E;color:#F0F0EC}
+.subtabs{display:flex;flex-wrap:wrap;margin-bottom:10px;border:1px solid #5A5A66;width:fit-content}
+.subtab{padding:5px 12px;cursor:pointer;font-size:11px;font-family:monospace;background:#FCFCFA;border:0;color:#17171E;border-right:1px solid #5A5A66}
+.subtab:last-child{border-right:0}.subtab.on{background:#3E6B73;color:#F0F0EC}
+.card{background:#FCFCFA;border:1px solid #DCDCD4;padding:12px}
+section.page{margin-top:18px}
+.block{margin-top:22px}
+h2{font-size:14px;font-weight:700;margin-bottom:2px}
+h3{font-size:12.5px;font-weight:700;margin:14px 0 4px}
+.sub{font-size:11.5px;color:#5A5A66;margin-bottom:8px;max-width:82ch}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
+.note{border-left:3px solid #A2196B;padding:10px 14px;background:#FCFCFA;font-size:11.5px;color:#5A5A66;margin-top:14px;line-height:1.6}
+.note b{color:#17171E}
+.note.warn{border-left-color:#B5432A}
+.note.ok{border-left-color:#3E6B73}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#17171E;color:#F0F0EC;padding:6px 8px;text-align:left;font-weight:600;font-size:10.5px;position:sticky;top:0}
+td{padding:4px 8px;border-bottom:1px solid #E6E6E0;vertical-align:top}
+td.r{text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#EDEFEA}
+tr.drop td{color:#B0B0A8;font-style:italic}
+.scroll{max-height:420px;overflow-y:auto;border:1px solid #DCDCD4}
+.pos{color:#3E6B73;font-weight:700}.neg{color:#B5432A;font-weight:700}
+.tag{display:inline-block;font-family:monospace;font-size:9.5px;padding:2px 6px;border-radius:2px;background:#E6E6E0;color:#5A5A66;margin-left:4px}
+.tag.bad{background:#F4DCD4;color:#B5432A}
+.tag.good{background:#DCEAE8;color:#3E6B73}
+iframe{width:100%;border:1px solid #DCDCD4;background:#fff}
+img.fig{width:100%;display:block;border:1px solid #DCDCD4;background:#fff}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.gallery figure{background:#FCFCFA;border:1px solid #DCDCD4;padding:8px}
+.gallery figcaption{font-size:11px;color:#5A5A66;margin-top:6px;line-height:1.5}
+.gallery figcaption b{color:#17171E}
+footer{margin-top:30px;padding-top:12px;border-top:1px solid #DCDCD4;font-family:monospace;font-size:10.5px;color:#8A8A92}
+.pill{display:inline-block;font-family:monospace;font-size:9.5px;padding:3px 8px;border:1px solid #17171E;border-radius:10px;margin:2px 4px 2px 0;cursor:pointer;background:#FCFCFA}
+.pill:hover{background:#EDEFEA}
+.overviewlist{list-style:none;margin-top:10px}
+.overviewlist li{padding:10px 0;border-bottom:1px solid #E6E6E0}
+.overviewlist b{display:block;font-size:12.5px;margin-bottom:2px}
+.overviewlist span{font-size:11.5px;color:#5A5A66}
+</style></head><body><div class="wrap">
+
+<header>
+<h1>#MeToo in the world's press</h1>
+<div class="updated">Compiled 2026-08-07 · sources: metoo_dashboard_v3.html, metoo_dashboard_fetch.html, 16_rematch_fulltext.py, 20_events_and_propagation.py, 17_lda_topics.py, 21_name_topics.py</div>
+</header>
+
+<div class="kpis" id="kpis">
+<div class="kpi"><b>212,957</b><small>articles collected</small></div>
+<div class="kpi"><b>205,528</b><small>links tried</small></div>
+<div class="kpi"><b>107,481</b><small>downloaded with text</small></div>
+<div class="kpi ac"><b>76,925</b><small>unique after duplicate removal</small></div>
+<div class="kpi s"><b>92,096</b><small>usable for topic modelling</small></div>
+</div>
+
+<div class="navtabs" id="navtabs">
+<button class="navtab on" onclick="showPage('p-overview',this)">Overview</button>
+<button class="navtab" onclick="showPage('p-corpus',this)">Corpus (v3)</button>
+<button class="navtab" onclick="showPage('p-fetch',this)">Fetch &amp; Duplicates</button>
+<button class="navtab" onclick="showPage('p-rematch',this)">Full-Text Rematch</button>
+<button class="navtab" onclick="showPage('p-events',this)">Events &amp; Spread</button>
+<button class="navtab" onclick="showPage('p-topics',this)">Topic Modelling</button>
+</div>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="page" id="p-overview">
+<div class="block">
+<h2>Update Summary (Week of Aug 3):</h2>
+<ul class="overviewlist">
+<li><b>Searched the full article text for keywords, not just the web address and headline <span class="tag good">rematch tab</span></b>
+<span>Keywords found per article went from 1.02 to 1.53. Hashtag share rose from 52.8% to 54.7%. Backlash vocabulary like "false accusations," "witch hunt," and "due process" was almost invisible before, since that language mostly appears in the body text, not the headline. This also corrects an earlier report: the two vocabulary groups were said to overlap by 0.2%. On full text the overlap is 2.7%, and will rise further.</span></li>
+<li><b>Removed duplicate articles using the article text <span class="tag good">fetch tab</span></b>
+<span>The first pass (web address + headline) removed 7,429. This pass compares the text itself and removes 33,940 more, leaving 76,925 unique articles. iHeartMedia's radio-station network alone produced 2,598 copies of 40 stories. The United States' share of the corpus dropped from 24.2% to 19.3% once syndication was removed.</span></li>
+<li><b>Added a second dashboard page for fetching and deduplication <span class="tag good">fetch tab</span></b>
+<span>Covers what happened to every link, download success by country and year, how the corpus shape changed, and which sites produced the most duplicate copies.</span></li>
+<li><b>Built an event timeline and measured how coverage spread <span class="tag good">events tab</span></b>
+<span>The Deneuve letter (France) reached 25 countries and most peaked the same day. The Kulturprofilen exposé (Sweden) reached 2 countries. #EleNão (Brazil) reached 1. The Weinstein story itself can't be measured, since it broke 10 days before the #MeToo hashtag existed, so keyword-based collection can't see its first 10 days.</span></li>
+<li><b>Ran LDA topic modelling, one model per language <span class="tag good">topics tab</span></b>
+<span>Seven languages had enough articles: English, Spanish, French, Portuguese, German, Swedish, and Italian. Six were modelled in this run. Four data problems were found and fixed first: broken character encoding, website furniture (cookie notices, ad copy), junk form pages, and 7,485 stale pages that served today's content instead of the original article.</span></li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Still open</h2>
+<div class="grid2">
+<div class="note warn"><b>What we're actually studying.</b> A sample of 398 downloaded articles found 17% of general-vocabulary articles are actually about the #MeToo movement, against 90% of hashtag articles. That implies roughly 42,000 of the 50,700 general-vocabulary articles are ordinary crime and court reporting, not movement coverage.</div>
+<div class="note warn"><b>Labelling the full corpus.</b> Needs an estimated $100–150 in AI credits. The project ran out before this could be finished.</div>
+<div class="note"><b>Outlet names are collapsed.</b> g1.globo.com, oglobo.globo.com and extra.globo.com all appear as globo.com. Outlet-level breakdowns understate how many distinct publishers are really in the corpus.</div>
+<div class="note"><b>Stale pages.</b> About 7% of downloaded pages served current site content instead of the original article at fetch time; 7,485 were caught and excluded from topic modelling.</div>
+</div>
+</div>
+</section>
+
+<!-- ============ CORPUS (v3, embedded) ============ -->
+<section class="page" id="p-corpus" style="display:none">
+<div class="block">
+<h2>The collected corpus</h2>
+<p class="sub">Original v3 dashboard, embedded as-is. Covers the full 212,957-article corpus before the fetch/dedup/rematch work below: country of origin, backlash vs. hashtag split, and language mix.</p>
+<iframe src="metoo_dashboard_v3.html" height="2000" loading="lazy"></iframe>
+</div>
+</section>
+
+<!-- ============ FETCH & DUPLICATES (embedded) ============ -->
+<section class="page" id="p-fetch" style="display:none">
+<div class="block">
+<h2>Downloading and deduplication</h2>
+<p class="sub">Original fetch/dedup dashboard, embedded as-is. Covers what happened to every link, download success by country and year, and which sites produced the most duplicate copies.</p>
+<iframe src="metoo_dashboard_fetch.html" height="2600" loading="lazy"></iframe>
+</div>
+</section>
+
+<!-- ============ FULL-TEXT REMATCH ============ -->
+<section class="page" id="p-rematch" style="display:none">
+<div class="block">
+<h2>Searching the full article text</h2>
+<p class="sub">Before this, keyword matching used only the web address and headline. 80% of articles have no headline saved, so most matches came from the web address alone: one or two words. An article holds hundreds. This pass searches the full downloaded text of 107,514 articles.</p>
+<div class="kpis" style="grid-template-columns:repeat(4,1fr)">
+<div class="kpi"><b>1.02 → 1.53</b><small>keywords found per article</small></div>
+<div class="kpi s"><b>52.8% → 54.7%</b><small>hashtag share of corpus (+2,004 articles gained a hashtag)</small></div>
+<div class="kpi bl"><b>2.9% → 5.3%</b><small>articles containing backlash vocabulary</small></div>
+<div class="kpi ac"><b>71 → 2,899</b><small>articles containing both support and backlash vocabulary</small></div>
+</div>
+<div class="note ok"><b>What it means.</b> The overall change is small, and that matters: it means the split between hashtag articles and general-vocabulary articles isn't caused by weak searching. France is still 77% general vocabulary after reading the whole article. The two groups are genuinely different kinds of coverage, not an artefact of where the keywords were searched.</div>
+<div class="note warn"><b>This corrects something reported earlier.</b> The two vocabulary groups were said to be effectively separate, at 0.2% overlap. On full text the overlap is 2.7%, and will rise further as labelling continues. The earlier backlash figures by country were built on only the half of the vocabulary that headlines and web addresses could show.</div>
+</div>
+
+<div class="block grid2">
+<div>
+<h3>Backlash vocabulary was almost invisible before</h3>
+<p class="sub">This language doesn't appear in headlines or web addresses. No editor writes "false accusations" into a URL. It shows up in the body: a quoted defence lawyer, a paragraph about due process.</p>
+<div class="card"><table>
+<tr><th>Term</th><th class="r">Found before</th><th class="r">Found now</th></tr>
+<tr><td>false accusations</td><td class="r">31</td><td class="r pos">837</td></tr>
+<tr><td>witch hunt</td><td class="r">337</td><td class="r pos">1,106</td></tr>
+<tr><td>due process</td><td class="r">291</td><td class="r pos">1,076</td></tr>
+</table></div>
+<h3>Brazilian hashtags: the test case</h3>
+<div class="card"><table>
+<tr><th>Hashtag</th><th class="r">Before</th><th class="r">After</th></tr>
+<tr><td>#EleNão</td><td class="r">3</td><td class="r pos">16</td></tr>
+<tr><td>#MeuPrimeiroAssédio</td><td class="r">0</td><td class="r pos">1</td></tr>
+<tr><td>#ChegaDeFiuFiu</td><td class="r">0</td><td class="r">0</td></tr>
+<tr><td>#MeuAmigoSecreto</td><td class="r">0</td><td class="r pos">8</td></tr>
+<tr><td>#MexeuComUmaMexeuComTodas</td><td class="r">0</td><td class="r pos">3</td></tr>
+<tr><td>#DeixaElaTrabalhar</td><td class="r">4</td><td class="r">4</td></tr>
+<tr><td>#PrimeiroAssédio</td><td class="r">0</td><td class="r">0</td></tr>
+<tr><td>#EuTambém</td><td class="r">0</td><td class="r pos">11</td></tr>
+</table></div>
+</div>
+<div>
+<h3>Hashtag share by country, before → after (n ≥ 300)</h3>
+<div class="card scroll"><table>
+<tr><th>Country</th><th class="r">n</th><th class="r">Before</th><th class="r">After</th><th class="r">Change</th></tr>
+<tr><td>France</td><td class="r">11,228</td><td class="r">16.0%</td><td class="r">22.9%</td><td class="r pos">+6.9pp</td></tr>
+<tr><td>Belgium</td><td class="r">1,163</td><td class="r">19.6%</td><td class="r">25.7%</td><td class="r pos">+6.1pp</td></tr>
+<tr><td>Nigeria</td><td class="r">781</td><td class="r">19.1%</td><td class="r">23.8%</td><td class="r pos">+4.7pp</td></tr>
+<tr><td>Switzerland</td><td class="r">1,609</td><td class="r">33.3%</td><td class="r">37.6%</td><td class="r pos">+4.4pp</td></tr>
+<tr><td>Sweden</td><td class="r">2,588</td><td class="r">81.6%</td><td class="r">85.2%</td><td class="r pos">+3.6pp</td></tr>
+<tr><td>Finland</td><td class="r">319</td><td class="r">87.1%</td><td class="r">90.6%</td><td class="r pos">+3.4pp</td></tr>
+<tr><td>Romania</td><td class="r">1,574</td><td class="r">18.1%</td><td class="r">21.5%</td><td class="r pos">+3.4pp</td></tr>
+<tr><td>Denmark</td><td class="r">331</td><td class="r">88.5%</td><td class="r">91.5%</td><td class="r pos">+3.0pp</td></tr>
+<tr><td>Indonesia</td><td class="r">399</td><td class="r">29.6%</td><td class="r">32.6%</td><td class="r pos">+3.0pp</td></tr>
+<tr><td>Norway</td><td class="r">757</td><td class="r">93.5%</td><td class="r">96.2%</td><td class="r pos">+2.6pp</td></tr>
+<tr><td>Pakistan</td><td class="r">595</td><td class="r">81.3%</td><td class="r">83.4%</td><td class="r pos">+2.0pp</td></tr>
+<tr><td>Canada</td><td class="r">2,745</td><td class="r">82.3%</td><td class="r">84.1%</td><td class="r pos">+1.9pp</td></tr>
+<tr><td>Ecuador</td><td class="r">328</td><td class="r">19.2%</td><td class="r">21.0%</td><td class="r pos">+1.8pp</td></tr>
+<tr><td>South Korea</td><td class="r">307</td><td class="r">22.1%</td><td class="r">23.8%</td><td class="r pos">+1.6pp</td></tr>
+<tr><td>Argentina</td><td class="r">5,574</td><td class="r">9.2%</td><td class="r">10.8%</td><td class="r pos">+1.5pp</td></tr>
+</table></div>
+<p class="sub" style="margin-top:6px">France moved most: general-vocabulary matching was under-counting its hashtag coverage by nearly 7 points.</p>
+</div>
+</div>
+
+<div class="block">
+<h3>Terms found only in the body text (never in headline or web address)</h3>
+<div class="card"><table>
+<tr><th>Term</th><th class="r">Articles</th></tr>
+<tr><td>sexual harassment</td><td class="r">16,183</td></tr>
+<tr><td>sexual violence</td><td class="r">3,722</td></tr>
+<tr><td>harcèlement</td><td class="r">3,099</td></tr>
+<tr><td>#MeToo</td><td class="r">2,776</td></tr>
+<tr><td>violencia de género</td><td class="r">2,582</td></tr>
+<tr><td>harcèlement sexuel</td><td class="r">1,926</td></tr>
+<tr><td>violence against women</td><td class="r">1,595</td></tr>
+<tr><td>Asia Argento</td><td class="r">1,517</td></tr>
+<tr><td>violences sexuelles</td><td class="r">1,412</td></tr>
+<tr><td>#TimesUp</td><td class="r">1,324</td></tr>
+<tr><td>sexuella trakasserier</td><td class="r">1,128</td></tr>
+<tr><td>#BalanceTonPorc</td><td class="r">1,059</td></tr>
+<tr><td>viol</td><td class="r">1,053</td></tr>
+<tr><td>acoso sexual</td><td class="r">1,021</td></tr>
+<tr><td>false accusations</td><td class="r">806</td></tr>
+<tr><td>due process</td><td class="r">785</td></tr>
+<tr><td>witch hunt</td><td class="r">769</td></tr>
+<tr><td>Tariq Ramadan</td><td class="r">751</td></tr>
+<tr><td>MJ Akbar</td><td class="r">671</td></tr>
+<tr><td>Priya Ramani</td><td class="r">526</td></tr>
+</table></div>
+</div>
+
+<div class="block">
+<h3>Removing duplicates with article text</h3>
+<p class="sub">The first pass (web address + headline) removed 7,429 copies. This second pass compares the text itself: each article is cut into overlapping five-word chunks, and two articles are compared by how many chunks they share.</p>
+<div class="card"><table>
+<tr><th>Overlap required</th><th class="r">Duplicate copies found</th><th class="r">Unique left</th></tr>
+<tr><td>100%, identical text</td><td class="r">24,165</td><td class="r">86,700</td></tr>
+<tr><td>90% or more</td><td class="r">30,259</td><td class="r">80,606</td></tr>
+<tr><td>80% or more (used)</td><td class="r"><b>33,940</b></td><td class="r"><b>76,925</b></td></tr>
+</table></div>
+<div class="note"><b>Verified.</b> On 99 sampled pairs, the true word overlap had a median of 100%. Zero pairs fell below 50%. These are literally identical texts, not near-misses.</div>
+<div class="note warn"><b>One limitation.</b> The rule that keeps a wire story separate when a newspaper adds its own editorial comment couldn't run properly. It needs stance labels we don't have yet. Only 130 articles were split out on text difference alone. Re-run after labelling.</div>
+</div>
+</section>
+
+<!-- ============ EVENTS & SPREAD ============ -->
+<section class="page" id="p-events" style="display:none">
+<div class="block">
+<h2>Event timeline</h2>
+<p class="sub">Daily article counts across the full corpus, with key events marked.</p>
+<div class="card"><img class="fig" src="event_timeline.png" alt="Daily article counts with events marked"></div>
+</div>
+
+<div class="block">
+<h2>How coverage spread</h2>
+<p class="sub">For each event, how many countries covered it and how long coverage took to reach each one. "Reliable" in the gallery below means 15 or more articles from that country in the measurement window. Below that, a peak day is close to meaningless.</p>
+<div class="card scroll"><table>
+<tr><th>Event</th><th>Origin</th><th>Date</th><th class="r">Countries reached</th><th class="r">Articles</th><th>Note</th></tr>
+<tr><td>Alyssa Milano tweet starts #MeToo</td><td>United States</td><td>2017-10-15</td><td class="r">35</td><td class="r">3,131</td><td>First event the corpus can see properly, since the hashtag it searches for was created this day. Origin peaked day +2; median peak elsewhere +2 days. Nordic countries peaked much later on their own national waves: Denmark +7d, Finland +36d, Sweden +37d, Norway +45d.</td></tr>
+<tr><td>Deneuve open letter, Le Monde</td><td>France</td><td>2018-01-09</td><td class="r">25</td><td class="r">744</td><td>Clearest case of near-instant spread. Origin peaked +2; 9 of 11 measurable countries peaked same day or the next.</td></tr>
+<tr><td>Kavanaugh &amp; Ford hearing</td><td>United States</td><td>2018-09-27</td><td class="r">24</td><td class="r">1,290</td><td>Senate confirmed Kavanaugh 6 Oct (day +9). Countries peaking at +7 to +9 are probably covering the confirmation vote, not the hearing itself.</td></tr>
+<tr><td>India #MeToo surge, Akbar &amp; Ramani</td><td>India</td><td>2018-10-11</td><td class="r">16</td><td class="r">1,607</td><td>Marks the surge, not the start. Earlier allegations began late September. MJ Akbar resigned 17 Oct.</td></tr>
+<tr><td>NYT publishes Weinstein story</td><td>United States</td><td>2017-10-05</td><td class="r">34</td><td class="r">2,130</td><td><span class="tag bad">unusable</span> Broke 10 days before the #MeToo hashtag existed. Our keyword-based collection can't see those first 10 days, so every country appears to peak around day +12. That's our starting line, not the world's reaction.</td></tr>
+<tr><td>Time Person of the Year, The Silence Breakers</td><td>none (annual)</td><td>2017-12-06</td><td class="r">12</td><td class="r">466</td><td>Global magazine cover, not a national event. No origin, no lag measured. Produces a worldwide simultaneous spike.</td></tr>
+<tr><td>Kulturprofilen exposé</td><td>Sweden</td><td>2017-11-21</td><td class="r">2</td><td class="r">170</td><td>Triggered Sweden's national reckoning but stayed almost entirely domestic. Origin peaked +1.</td></tr>
+<tr><td>Manresa verdict (2nd 'manada' case)</td><td>Spain</td><td>2019-11-19</td><td class="r">3</td><td class="r">405</td><td>Drives much of the November 2019 spike, alongside the UN day on the 25th.</td></tr>
+<tr><td>UN Day on violence against women 2018</td><td>none (annual)</td><td>2018-11-25</td><td class="r">11</td><td class="r">350</td><td>Annual observance, no origin, no lag measured. Shows which countries mark the day.</td></tr>
+<tr><td>La Manada verdict</td><td>Spain</td><td>2018-04-26</td><td class="r">2</td><td class="r">39</td><td>Thin data. Only 21 Spanish articles with text survive. Spanish 'manada' coverage in this corpus is dominated by the 2019 Manresa case instead.</td></tr>
+<tr><td>#EleNão protests</td><td>Brazil</td><td>2018-09-29</td><td class="r">1</td><td class="r">19</td><td>Only 19 Brazilian articles. Brazil mostly entered the corpus through 'feminicidio,' not through its hashtags, so this movement is badly undercounted.</td></tr>
+<tr><td>Burning Sun scandal</td><td>South Korea</td><td>2019</td><td class="r">0</td><td class="r">0</td><td><span class="tag bad">unusable</span> One South Korean article with text survives in the whole of 2019.</td></tr>
+</table></div>
+<div class="note"><b>A French cultural controversy went worldwide in a day. A Swedish one that produced a national movement barely crossed the border.</b> Deneuve reached 25 countries same-day-or-next for 9 of 11; Kulturprofilen reached 2.</div>
+</div>
+
+<div class="block">
+<h3>Propagation by country, event by event</h3>
+<p class="sub">Each chart shows when coverage arrived and peaked in every country that covered the event.</p>
+<div class="gallery">
+<figure><img class="fig" src="propagation_metoo_tweet.png" alt="Milano tweet propagation"><figcaption><b>Milano tweet.</b> 35 countries; origin peaks day +2, most of the world follows within a week. The Nordic countries are the exception: their own national waves, weeks later.</figcaption></figure>
+<figure><img class="fig" src="propagation_deneuve.png" alt="Deneuve letter propagation"><figcaption><b>Deneuve letter.</b> 25 countries, near-simultaneous peaks.</figcaption></figure>
+<figure><img class="fig" src="propagation_kavanaugh.png" alt="Kavanaugh hearing propagation"><figcaption><b>Kavanaugh hearing.</b> Two-phase pattern: a small bump at the hearing, a bigger one nine days later at the confirmation vote.</figcaption></figure>
+<figure><img class="fig" src="propagation_india_metoo.png" alt="India MeToo surge propagation"><figcaption><b>India surge.</b> 16 countries; heavily India-dominated (1,274 of 1,607 articles).</figcaption></figure>
+<figure><img class="fig" src="propagation_weinstein.png" alt="Weinstein story propagation, marked unusable"><figcaption><b>Weinstein story.</b> <span class="tag bad">marked unusable</span>. Every country appears to peak around day +12 because that's when hashtag-based collection starts, not when the story broke.</figcaption></figure>
+<figure><img class="fig" src="propagation_time_poty.png" alt="Time Person of the Year propagation"><figcaption><b>Time POTY cover.</b> Simultaneous global spike, no single origin.</figcaption></figure>
+<figure><img class="fig" src="propagation_nordic_wave.png" alt="Kulturprofilen propagation"><figcaption><b>Kulturprofilen (Sweden).</b> Reached only 2 countries, a domestic wave.</figcaption></figure>
+<figure><img class="fig" src="propagation_manresa.png" alt="Manresa verdict propagation"><figcaption><b>Manresa verdict.</b> Spain-dominated (387 of 405 articles).</figcaption></figure>
+<figure><img class="fig" src="propagation_la_manada.png" alt="La Manada verdict propagation"><figcaption><b>La Manada verdict.</b> Thin data, 2 countries only.</figcaption></figure>
+<figure><img class="fig" src="propagation_elenao.png" alt="EleNão propagation"><figcaption><b>#EleNão.</b> 1 country, 19 articles, likely undercounted.</figcaption></figure>
+<figure><img class="fig" src="propagation_un_day_2018.png" alt="UN Day 2018 propagation"><figcaption><b>UN Day 2018.</b> Annual observance, 11 countries mark it.</figcaption></figure>
+</div>
+</div>
+
+<div class="block">
+<h3>Reading these numbers</h3>
+<div class="grid2">
+<div class="note warn"><b>Small-n peaks are noise.</b> With 6 articles, the peak day is wherever 2 of them happened to land. Only countries with 15+ articles are used in the lag statistics.</div>
+<div class="note warn"><b>A late peak may be a different event.</b> Kavanaugh is the clearest case. The hearing was 27 September, confirmation was 6 October (day +9). Check what else happened that week before calling something a lag.</div>
+<div class="note"><b>Download success varied by country</b>, from 26% to 80%. A country with poor retrieval looks quieter than it was.</div>
+<div class="note"><b>Absence here means absence in our corpus</b>, not that the country ignored the event.</div>
+</div>
+</div>
+</section>
+
+<!-- ============ TOPIC MODELLING ============ -->
+<section class="page" id="p-topics" style="display:none">
+<div class="block">
+<h2>LDA topic modelling</h2>
+<p class="sub">LDA finds groups of words that appear together, called a topic, and scores each article on how much of each topic it contains. It doesn't name topics; that's done by hand afterward. Running all languages together just maps languages, not themes, so each language gets its own model.</p>
+<div class="grid2">
+<div class="note"><b>Languages modelled.</b> English (38,122 articles available, modelled on a sample of 25,000), Spanish (18,675), French (15,023), Portuguese (3,354), German (2,734), Swedish (2,079). 80,923 articles fed into these six models. Italian (936) also had enough articles by the same threshold but is not yet modelled in this run.</div>
+<div class="note ok"><b>Four data problems fixed before this run.</b> Broken character encoding in 4,314 articles (Spanish "prisión" stored as "prisiÃ³n," corrupting whole topics). Website furniture: a Swedish topic built entirely from "annons" (advertisement), a German one from the privacy policy, a French one from cookie notices. Junk pages, like an English topic that turned out to be a country dropdown from a registration form. And 7,485 stale pages serving today's content instead of the article, excluded.</div>
+</div>
+<div class="note ok"><b>Highlights:</b> The Swedish Academy appears as its own isolated topic. The propagation analysis independently showed that story reached just 2 countries, two unrelated methods agreeing Sweden's wave was domestic. Separately, Spanish and Portuguese topics are dominated by individual femicide cases and court vocabulary, while English and French topics are dominated by the movement and named figures. This is the same hashtag-vs-general-vocabulary split found elsewhere in this project, appearing again without anyone labelling anything.</div>
+</div>
+
+<div class="block">
+<div class="subtabs" id="langtabs">
+<button class="subtab on" onclick="showLang('en',this)">English</button>
+<button class="subtab" onclick="showLang('es',this)">Spanish</button>
+<button class="subtab" onclick="showLang('fr',this)">French</button>
+<button class="subtab" onclick="showLang('pt',this)">Portuguese</button>
+<button class="subtab" onclick="showLang('de',this)">German</button>
+<button class="subtab" onclick="showLang('sv',this)">Swedish</button>
+</div>
+
+<!-- EN -->
+<div class="langpanel" data-lang="en">
+<p class="sub">n = 25,000 articles modelled. French was the cleanest set of results overall; English's raw topics run from legal/political investigations to music-industry allegations.</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr><td>1</td><td>Legal and political investigations</td><td>allegations, harassment, court, state, former, investigation, accused, case, akbar, kavanaugh, house, alleged, statement, claims, made</td></tr>
+<tr><td>2</td><td>Music industry allegations</td><td>music, kelly, song, industry, show, best, performance, star, awards, media, singer, night, grammys, radio, color</td></tr>
+<tr><td>3</td><td>Workplace harassment and policy</td><td>harassment, men, assault, workplace, many, sex, people, victims, company, work, employees, male, culture, cosby, even</td></tr>
+<tr><td>4</td><td>Film industry allegations</td><td>harassment, allegations, accused, film, actor, media, india, industry, director, statement, actress, misconduct, allen, assault, woman</td></tr>
+<tr><td>5</td><td>Indian criminal cases</td><td>police, court, case, rape, delhi, nirbhaya, death, india, justice, milano, singh, accused, december, convicts, petition</td></tr>
+<tr><td>6</td><td>US politics and Weinstein</td><td>trump, weinstein, president, hollywood, harvey, harassment, clinton, burke, assault, men, york, allegations, times, argento, white</td></tr>
+<tr class="drop"><td>7</td><td>DROP (function words, no theme)</td><td>like, people, men, know, think, don, now, get, way, even, woman, man, story, really, didn</td></tr>
+<tr><td>8</td><td>Campus and prevention</td><td>violence, abuse, harassment, university, gender, students, public, victims, people, social, country, support, media, girls, school</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_en.png" alt="English wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_en.png" alt="English topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_en.png" alt="English topics by country"></div>
+<h3>Named &amp; merged (DROP topics excluded)</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_en.png" alt="English named topics over time">
+<img class="fig" src="named_by_country_en.png" alt="English named topics by country">
+</div>
+</div>
+
+<!-- ES -->
+<div class="langpanel" data-lang="es" style="display:none">
+<p class="sub">n = 18,675 articles modelled. Spanish topics skew toward individual femicide cases and court/legal vocabulary rather than the movement itself.</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr><td>1</td><td>Feminist politics and social media</td><td>hombres, sociales, redes, país, feminista, trabajo, política, estados, campaña, presidente, tema, mujer, nuestros, gobierno, nuestro</td></tr>
+<tr><td>2</td><td>The MeToo movement</td><td>sexual, acoso, metoo, movimiento, sexuales, abuso, abusos, sido, acusaciones, weinstein, actriz, manada, violación, caso, denuncia</td></tr>
+<tr><td>3</td><td>Gender violence law and policy</td><td>violencia, género, víctimas, casos, mujer, nacional, estado, ley, feminicidio, cada, atención, protección, además, denuncias, gobierno</td></tr>
+<tr><td>4</td><td>Spanish party politics</td><td>violencia, género, igualdad, madrid, vox, gobierno, machista, ayuntamiento, internacional, partido, córdoba, lucha, acto, jueves, formación</td></tr>
+<tr><td>5</td><td>Mexican femicide investigations</td><td>feminicidio, estado, puebla, autoridades, universidad, investigación, político, violador, caso, justicia, fiscalía, estudiante, general, casa, estudiantes</td></tr>
+<tr><td>6</td><td>Personal and family narrative</td><td>casa, familia, madre, estaba, hija, mujer, justicia, vida, tenía, hace, vez, hacer, hijos, nunca, violencia</td></tr>
+<tr><td>7</td><td>Individual femicide cases</td><td>mujer, pareja, cuerpo, víctima, policía, hombre, joven, femicidio, casa, lugar, luego, feminicidio, detenido, hecho, crimen</td></tr>
+<tr><td>8</td><td>Court proceedings</td><td>delito, prisión, víctima, fiscal, juicio, fiscalía, caso, audiencia, penal, juez, femicidio, tribunal, justicia, feminicidio, sentencia</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_es.png" alt="Spanish wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_es.png" alt="Spanish topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_es.png" alt="Spanish topics by country"></div>
+<h3>Named &amp; merged (no DROP topics in Spanish)</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_es.png" alt="Spanish named topics over time">
+<img class="fig" src="named_by_country_es.png" alt="Spanish named topics by country">
+</div>
+</div>
+
+<!-- FR -->
+<div class="langpanel" data-lang="fr" style="display:none">
+<p class="sub">n = 15,023 articles modelled. The cleanest set of results in the project: Weinstein, criminal trials, police investigations, #BalanceTonPorc and the Muller case, Haenel and Polanski, Tariq Ramadan, Darmanin.</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr><td>1</td><td>General discussion of harassment</td><td>femmes, comme, aussi, harcèlement, hommes, victimes, elles, violences, contre, peut, bien, sexuelles, ils, femme, entre</td></tr>
+<tr><td>2</td><td>Weinstein</td><td>weinstein, femmes, harvey, metoo, accusé, accusations, producteur, actrice, mouvement, aussi, york, américain, contre, depuis, plusieurs</td></tr>
+<tr><td>3</td><td>Criminal trials</td><td>victime, cour, fille, jeune, homme, accusé, prison, ils, procès, police, devant, policiers, assises, condamné, tribunal</td></tr>
+<tr><td>4</td><td>Police investigations</td><td>jeune, garde, examen, vue, enquête, femme, parquet, plainte, homme, paris, judiciaire, placé, aurait, sous, détention</td></tr>
+<tr><td>5</td><td>#BalanceTonPorc and the Muller case</td><td>harcèlement, enquête, justice, sexuel, balancetonporc, muller, sandra, assange, gilbert, contre, ancien, tribunal, patrick, lors, julian</td></tr>
+<tr><td>6</td><td>Haenel, Polanski and the film industry</td><td>réalisateur, adèle, haenel, polanski, actrice, film, roman, christophe, justice, ruggia, sexuel, harcèlement, cinéma, enquête, alors</td></tr>
+<tr><td>7</td><td>Tariq Ramadan case</td><td>ramadan, tariq, plainte, femme, neymar, paris, depuis, suisse, contre, enquête, islamologue, ayari, hôtel, henda, avocat</td></tr>
+<tr><td>8</td><td>Police investigations</td><td>plainte, enquête, darmanin, ministre, plaignante, accusations, suite, parquet, contre, femme, ronaldo, paris, affaire, sans, aurait</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_fr.png" alt="French wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_fr.png" alt="French topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_fr.png" alt="French topics by country"></div>
+<h3>Named &amp; merged (topics 4 &amp; 8 share the name "Police investigations")</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_fr.png" alt="French named topics over time">
+<img class="fig" src="named_by_country_fr.png" alt="French named topics by country">
+</div>
+</div>
+
+<!-- PT -->
+<div class="langpanel" data-lang="pt" style="display:none">
+<p class="sub">n = 3,354 articles modelled. Like Spanish, Portuguese topics are dominated by individual femicide cases, legal proceedings and violence statistics rather than the movement itself.</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr><td>1</td><td>Court trials</td><td>justiça, crime, vítima, tribunal, júri, acusado, feminicídio, defesa, réu, julgamento, juiz, público, condenado, prisão, homicídio</td></tr>
+<tr><td>2</td><td>Public campaigns and debate</td><td>mulheres, sobre, dia, pessoas, violência, muito, gente, ainda, sociedade, campanha, nós, país, estão, governo, grupo</td></tr>
+<tr><td>3</td><td>A single named case</td><td>comentários, vítima, tatiane, advogada, crime, polícia, defesa, felipe, prédio, paraná, após, dia, manvailer, gazeta, spitzner</td></tr>
+<tr><td>4</td><td>The MeToo movement</td><td>sexual, mulheres, assédio, metoo, sobre, movimento, ter, muito, atriz, homens, pessoas, acusações, abuso, trabalho, weinstein</td></tr>
+<tr><td>5</td><td>Maria da Penha law and legislation</td><td>feminicídio, violência, lei, mulheres, crime, doméstica, justiça, maria, penha, projeto, pena, crimes, casos, câmara, pública</td></tr>
+<tr><td>6</td><td>Violence statistics</td><td>violência, mulheres, casos, feminicídio, vítimas, estado, segurança, brasil, segundo, dados, gênero, número, crime, pública, ainda</td></tr>
+<tr class="drop"><td>7</td><td>DROP (sport and entertainment, unrelated)</td><td>letra, brasileira, seleção, música, série, divulgação, primeira, neste, domingo, vôlei, melhor, feminina, brasileiro, noite, arte</td></tr>
+<tr><td>8</td><td>Police cases</td><td>polícia, crime, vítima, casa, feminicídio, estava, segundo, suspeito, caso, após, homem, preso, civil, dia, corpo</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_pt.png" alt="Portuguese wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_pt.png" alt="Portuguese topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_pt.png" alt="Portuguese topics by country"></div>
+<h3>Named &amp; merged (DROP topic excluded)</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_pt.png" alt="Portuguese named topics over time">
+<img class="fig" src="named_by_country_pt.png" alt="Portuguese named topics by country">
+</div>
+</div>
+
+<!-- DE -->
+<div class="langpanel" data-lang="de" style="display:none">
+<p class="sub">n = 2,734 articles modelled. Noisiest set: three of eight topics were dropped as off-topic (US politics unrelated to #MeToo, a general news blog).</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr><td>1</td><td>General debate on harassment</td><td>belästigung, man, sexuelle, männer, unter, wurde, gewalt, frau, sei, debatte, viele, immer, opfer, mann, sexueller</td></tr>
+<tr><td>2</td><td>General debate on harassment</td><td>man, debatte, zeit, gibt, mich, film, immer, deutschland, wedel, schon, jetzt, sei, ihrer, viel, mir</td></tr>
+<tr><td>3</td><td>Time Person of the Year</td><td>jahres, bewegung, kinder, person, übergriffe, männer, swift, trump, seit, magazin, gemeinsam, weinstein, ball, eltern, judd</td></tr>
+<tr><td>4</td><td>Weinstein</td><td>weinstein, vorwürfe, harvey, wurde, bewegung, sexuelle, york, hollywood, sei, sexueller, unter, übergriffe, wegen, schauspielerin, argento</td></tr>
+<tr><td>5</td><td>US politics, witch-hunt framing</td><td>trump, präsident, donald, mueller, russland, trumps, ermittlungen, hexenjagd, sei, washington, worden, präsidenten, seinen, regierung, unter</td></tr>
+<tr class="drop"><td>6</td><td>DROP (press release boilerplate)</td><td>www, besonders, jetzt, prozent, http, erste, zeigen, aktien, ots, presseportal, newsroom, viele, via, rss, korrektur</td></tr>
+<tr><td>7</td><td>General debate on harassment</td><td>deneuve, catherine, berlinale, sexuelle, debatte, false, freiheit, frankreich, csd, berlin, interview, true, gewalt, sei, pulitzer</td></tr>
+<tr class="drop"><td>8</td><td>DROP (unrelated news blog)</td><td>trump, präsident, donald, ukraine, andrej, bachelor, newsblog, demokraten, biden, selenskyj, jennifer, netanjahu, usa, ermittlungen, wegen</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_de.png" alt="German wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_de.png" alt="German topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_de.png" alt="German topics by country"></div>
+<h3>Named &amp; merged (topics 1, 2 &amp; 7 share "General debate on harassment"; DROP topics excluded)</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_de.png" alt="German named topics over time">
+<img class="fig" src="named_by_country_de.png" alt="German named topics by country">
+</div>
+</div>
+
+<!-- SV -->
+<div class="langpanel" data-lang="sv" style="display:none">
+<p class="sub">n = 2,079 articles modelled. Smallest and noisiest sample: three of eight topics dropped as broadcaster boilerplate or function words. The Kulturprofilen/Swedish Academy topic is the standout: it independently confirms the propagation finding that this story stayed almost entirely domestic.</p>
+<div class="card"><table>
+<tr><th>#</th><th>Name</th><th>Top words</th></tr>
+<tr class="drop"><td>1</td><td>DROP (broadcaster boilerplate)</td><td>arbetar, svt, läs, stå, kampanjen, miljoner, fakta, svårt, relevant, berätta, sverige, sant, bekräftade, annat, akuta</td></tr>
+<tr class="drop"><td>2</td><td>DROP (function words, no theme)</td><td>mån, trump, oktober, därefter, vår, fram, emma, nya, ingen, skriver, usa, årets, redan, bästa, artiklar</td></tr>
+<tr><td>3</td><td>Virtanen and Wallin defamation case</td><td>wallin, virtanen, cissi, fredrik, medier, aftonbladet, anklagelserna, flera, oktober, förtal, enligt, sociala, anklagelser, inlägg, tidigare</td></tr>
+<tr><td>4</td><td>Swedish Academy and Kulturprofilen</td><td>akademien, kulturprofilen, svenska, två, mannen, våldtäkt, arnault, fall, sara, hurtig, dagens, björn, kallade, danius, hovrätten</td></tr>
+<tr><td>5</td><td>The upprop campaigns</td><td>vittnar, skriver, svenska, upprop, flera, uppropet, kvinnliga, oktober, kampanjen, berättar, några, senare, weinstein, sexism, medier</td></tr>
+<tr class="drop"><td>6</td><td>DROP (function words, no theme)</td><td>män, någon, varit, utan, allt, göra, tror, gör, kanske, bli, ser, blev, ingen, tycker, själv</td></tr>
+<tr><td>7</td><td>The upprop campaigns</td><td>nilsson, kvinnan, stefan, enligt, flera, fick, skriver, rörelsen, varit, ryssland, uppropet, samtidigt, skådespelare, misslyckats, stora</td></tr>
+<tr><td>8</td><td>Violence statistics</td><td>våld, procent, män, sverige, fram, rörelsen, kvinnors, uppropet, fler, enligt, göra, sexuellt, vittnesmål, berättelser, fick</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<figure><img class="fig" src="lda_wordcloud_sv.png" alt="Swedish wordcloud"></figure>
+<figure><img class="fig" src="lda_over_time_sv.png" alt="Swedish topics over time"></figure>
+</div>
+<div class="card" style="margin-top:14px"><img class="fig" src="lda_by_country_sv.png" alt="Swedish topics by country"></div>
+<h3>Named &amp; merged (topics 5 &amp; 7 share "The upprop campaigns"; DROP topics excluded)</h3>
+<div class="grid2">
+<img class="fig" src="named_over_time_sv.png" alt="Swedish named topics over time">
+<img class="fig" src="named_by_country_sv.png" alt="Swedish named topics by country">
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+compiled 2026-08-07 · #MeToo global press corpus, Oct 2017–Dec 2019 · fads-metoo project<br>
+this page: overview + full-text rematch + events/spread + topic modelling are new; corpus and fetch/duplicates tabs embed the existing dashboard files unchanged
+</footer>
+</div>
+
+<script>
+function showPage(id, btn){
+  document.querySelectorAll('.page').forEach(function(p){p.style.display='none'});
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('#navtabs .navtab').forEach(function(t){t.classList.remove('on')});
+  btn.classList.add('on');
+}
+function showLang(lang, btn){
+  document.querySelectorAll('.langpanel').forEach(function(p){p.style.display=(p.getAttribute('data-lang')===lang)?'block':'none'});
+  document.querySelectorAll('#langtabs .subtab').forEach(function(t){t.classList.remove('on')});
+  btn.classList.add('on');
+}
+</script>
+</body></html>
