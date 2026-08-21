@@ -48,12 +48,21 @@ scripts/07_fetch_and_label.py ──► data/processed/labeled_articles.csv   �
         │         └──► scripts/21_name_topics.py ──► codebook/topic_names.csv (you edit this)
         │                                       ├──► outputs/tables/topic_names_final.csv
         │                                       └──► outputs/figures/named_*.png
+        ├──► scripts/22_phrases.py ──► outputs/tables/ngrams_<lang>.csv
+        │                          ├──► outputs/tables/collocations_<lang>.csv
+        │                          ├──► outputs/tables/kwic_<lang>.csv
+        │                          ├──► outputs/tables/repeated_sentences_<lang>.csv
+        │                          └──► outputs/reports/phrases_report.txt
         ├──► scripts/19_build_fetch_dashboard.py ──► outputs/dashboards/metoo_dashboard_fetch.html
         └──► scripts/20_events_and_propagation.py ──► outputs/figures/event_timeline.png
                                                   ├──► outputs/figures/propagation_*.png
                                                   ├──► outputs/tables/propagation_summary.csv
                                                   └──► outputs/reports/events_report.txt
 ```
+
+`scripts/22_phrases.py` is the one script that reads `deduped_articles.csv` by
+preference rather than `labeled_articles.csv`, because phrase counts are far more
+sensitive to syndicated duplicates than topic models are.
 
 `outputs/dashboards/metoo_grand_dashboard.html` has no generator script — it was
 hand-assembled from the outputs of the scripts above.
@@ -81,4 +90,6 @@ hand-assembled from the outputs of the scripts above.
 | `19_build_fetch_dashboard.py` | Dashboard for the fetch and deduplication stages. |
 | `20_events_and_propagation.py` | Event timeline and per-country coverage lag for eleven events. |
 | `21_name_topics.py` | Two-step human naming of LDA topics, then re-renders every chart with the names. |
+| `22_phrases.py` | Common phrases rather than common words: n-grams with a syndication guard, log-Dice collocations for chosen node words, KWIC concordance lines, and repeated whole sentences — the quotations that travelled between outlets and countries. Answers what a generic topic word like *people* actually means in context. |
+| `_textutils.py` | Shared stopword, boilerplate and accented-form lists plus language detection, imported by both `17` and `22` so the topic tables and the phrase tables filter identically. |
 | `api_test.py` | Twenty-second check that the Gemini key works, before starting a long run. |

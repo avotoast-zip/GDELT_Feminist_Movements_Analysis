@@ -34,6 +34,18 @@ both are gone.
 article.** 7,485 such articles are excluded from topic modelling; they are still
 present in `labeled_articles.csv`.
 
+**Some article bodies arrive ROT47-encoded.** US local-news platforms built on
+the Lee Enterprises / BLOX stack serve the lead paragraph as plain text and the
+rest of the body ROT47-encoded as a scraper deterrent: `kAmp?5 r2C=D@?` is
+`<p>And Carlson`. These articles pass every length and quality filter and then
+contribute nothing but noise. Roughly 0.6% of the corpus in a 4,000-article
+check, concentrated in US local outlets — which matters for a study comparing
+countries, because it thins exactly the American local coverage. Found in August
+2026 when repeated-sentence detection surfaced encoded strings as "quotations".
+`_textutils.repair_rot47()` now decodes them, and both `17_lda_topics.py` and
+`22_phrases.py` call it. On the check sample it repaired 23 of 23 affected
+articles with no false positives across 3,977 unaffected ones.
+
 **Download success varies by country, from 26% to 80%.** A country with poor
 retrieval looks quieter than it was. Absence of coverage in this corpus is not
 evidence that a country ignored an event.

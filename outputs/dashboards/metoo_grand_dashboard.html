@@ -52,13 +52,20 @@ footer{margin-top:30px;padding-top:12px;border-top:1px solid #DCDCD4;font-family
 .pill:hover{background:#EDEFEA}
 .overviewlist{list-style:none;margin-top:10px}
 .overviewlist li{padding:10px 0;border-bottom:1px solid #E6E6E0}
+.dirlist{list-style:none;margin-top:8px}
+.dirlist li{padding:7px 0;border-bottom:1px solid #E6E6E0;font-size:12px;line-height:1.6;color:#5A5A66}
+.dirlist li b{color:#17171E;font-weight:700}
+.dirlist li .n{font-family:monospace;font-size:10px;color:#A2196B;margin-right:7px}
+.tag.next{background:#F0E2EA;color:#A2196B}
+.tag.cost{background:#E6E6E0;color:#5A5A66}
+.legend{font-size:10.5px;color:#8A8A92;font-family:monospace;margin-top:6px}
 .overviewlist b{display:block;font-size:12.5px;margin-bottom:2px}
 .overviewlist span{font-size:11.5px;color:#5A5A66}
 </style></head><body><div class="wrap">
 
 <header>
 <h1>#MeToo in the world's press</h1>
-<div class="updated">Compiled 2026-08-07 · sources: metoo_dashboard_v3.html, metoo_dashboard_fetch.html, 16_rematch_fulltext.py, 20_events_and_propagation.py, 17_lda_topics.py, 21_name_topics.py</div>
+<div class="updated">Compiled 2026-08-19 · sources: metoo_dashboard_v3.html, metoo_dashboard_fetch.html, 16_rematch_fulltext.py, 20_events_and_propagation.py, 17_lda_topics.py, 21_name_topics.py</div>
 </header>
 
 <div class="kpis" id="kpis">
@@ -80,31 +87,56 @@ footer{margin-top:30px;padding-top:12px;border-top:1px solid #DCDCD4;font-family
 
 <!-- ============ OVERVIEW ============ -->
 <section class="page" id="p-overview">
+
 <div class="block">
-<h2>Update Summary (Week of Aug 3):</h2>
-<ul class="overviewlist">
-<li><b>Searched the full article text for keywords, not just the web address and headline <span class="tag good">rematch tab</span></b>
-<span>Keywords found per article went from 1.02 to 1.53. Hashtag share rose from 52.8% to 54.7%. Backlash vocabulary like "false accusations," "witch hunt," and "due process" was almost invisible before, since that language mostly appears in the body text, not the headline. This also corrects an earlier report: the two vocabulary groups were said to overlap by 0.2%. On full text the overlap is 2.7%, and will rise further.</span></li>
-<li><b>Removed duplicate articles using the article text <span class="tag good">fetch tab</span></b>
-<span>The first pass (web address + headline) removed 7,429. This pass compares the text itself and removes 33,940 more, leaving 76,925 unique articles. iHeartMedia's radio-station network alone produced 2,598 copies of 40 stories. The United States' share of the corpus dropped from 24.2% to 19.3% once syndication was removed.</span></li>
-<li><b>Added a second dashboard page for fetching and deduplication <span class="tag good">fetch tab</span></b>
-<span>Covers what happened to every link, download success by country and year, how the corpus shape changed, and which sites produced the most duplicate copies.</span></li>
-<li><b>Built an event timeline and measured how coverage spread <span class="tag good">events tab</span></b>
-<span>The Deneuve letter (France) reached 25 countries and most peaked the same day. The Kulturprofilen exposé (Sweden) reached 2 countries. #EleNão (Brazil) reached 1. The Weinstein story itself can't be measured, since it broke 10 days before the #MeToo hashtag existed, so keyword-based collection can't see its first 10 days.</span></li>
-<li><b>Ran LDA topic modelling, one model per language <span class="tag good">topics tab</span></b>
-<span>Seven languages had enough articles: English, Spanish, French, Portuguese, German, Swedish, and Italian. Six were modelled in this run. Four data problems were found and fixed first: broken character encoding, website furniture (cookie notices, ad copy), junk form pages, and 7,485 stale pages that served today's content instead of the original article.</span></li>
+<h2>Directions explored so far</h2>
+<div class="sub">Every line of enquiry this project has actually run, with the one result that came out of it. Tabs in this dashboard hold the detail.</div>
+<ul class="dirlist">
+
+<li><span class="n">01</span><b>Corpus construction and the multilingual codebook</b> <span class="tag good">corpus tab</span> &mdash; ~1,700 terms across 156 countries produced 212,957 articles in 190 countries, but only 56% matched a hashtag; the rest matched general gender-violence vocabulary. Everything below is shaped by that split.</li>
+
+<li><span class="n">02</span><b>Retrieval and link rot</b> <span class="tag good">fetch tab</span> &mdash; 107,481 of 205,528 links still returned text in 2026, with success ranging from 26% to 80% by country, so a quiet country may be a retrieval artifact rather than silence.</li>
+
+<li><span class="n">03</span><b>Syndication and duplicate removal</b> <span class="tag good">fetch tab</span> &mdash; 33,940 duplicate copies removed on text overlap; the United States fell from 24.2% to 19.3% of the corpus, so part of American dominance was wire syndication, not editorial attention.</li>
+
+<li><span class="n">04</span><b>Outlet and country structure</b> <span class="tag good">corpus tab</span> &mdash; 11,744 outlets profiled for concentration, language and likely TLD misassignment; outlet names still collapse by domain, so distinct publishers are undercounted.</li>
+
+<li><span class="n">05</span><b>Support versus backlash vocabulary</b> <span class="tag good">rematch tab</span> &mdash; reading full article text made backlash language visible for the first time ("false accusations" 31 &rarr; 837 hits), and the overlap between the two vocabularies rose from 0.2% to 2.7%.</li>
+
+<li><span class="n">06</span><b>LDA topic modelling and word clouds, one model per language</b> <span class="tag good">topics tab</span> &mdash; six languages modelled and hand-named: Spanish and Portuguese topics are femicide court reporting, English and French are the movement and its named figures.</li>
+
+<li><span class="n">07</span><b>Event timeline and cross-country propagation</b> <span class="tag good">events tab</span> &mdash; eleven events measured; reach varies from 1 to 35 countries, and the Nordic "lags" turned out to be separate national waves rather than delayed reactions.</li>
+
+<li><span class="n">08</span><b>LLM stance and aboutness labelling, sample only</b> <span class="tag bad">398 articles</span> &mdash; 90.5% of hashtag-matched articles are about the movement against 17.1% of general-vocabulary ones, implying ~42,000 of 50,700 are ordinary crime reporting. The full corpus is unlabelled.</li>
+
+<li><span class="n">09</span><b>Tone analysis, and why it was abandoned</b> <span class="tag bad">superseded</span> &mdash; baseline-adjusted GDELT tone ranked a satirical viral meme as the top backlash figure, which is the empirical reason this project moved from tone to stance.</li>
+
 </ul>
 </div>
 
 <div class="block">
-<h2>Still open</h2>
-<div class="grid2">
-<div class="note warn"><b>What we're actually studying.</b> A sample of 398 downloaded articles found 17% of general-vocabulary articles are actually about the #MeToo movement, against 90% of hashtag articles. That implies roughly 42,000 of the 50,700 general-vocabulary articles are ordinary crime and court reporting, not movement coverage.</div>
-<div class="note warn"><b>Labelling the full corpus.</b> Needs an estimated $100–150 in AI credits. The project ran out before this could be finished.</div>
-<div class="note"><b>Outlet names are collapsed.</b> g1.globo.com, oglobo.globo.com and extra.globo.com all appear as globo.com. Outlet-level breakdowns understate how many distinct publishers are really in the corpus.</div>
-<div class="note"><b>Stale pages.</b> About 7% of downloaded pages served current site content instead of the original article at fetch time; 7,485 were caught and excluded from topic modelling.</div>
+<h2>Directions not yet explored</h2>
+<div class="sub">Candidates for where to go next, with what each would cost.</div>
+<ul class="dirlist">
+
+<li><span class="n">10</span><b>Phrases instead of single words</b> <span class="tag next">next</span> <span class="tag cost">free &middot; ~1 day</span> &mdash; collocations and keyphrases per language, so a generic LDA word like "people" resolves into the phrases it actually occurs in. Directly addresses the weakest part of the topic results.</li>
+
+<li><span class="n">11</span><b>Stance and aboutness at full-corpus scale, without paying</b> <span class="tag next">next</span> <span class="tag cost">free &middot; ~2 days</span> &mdash; a local zero-shot or few-shot classifier trained on the existing 398 labels would replace the $100&ndash;150 API bill and settle the corpus-composition question for all 76,925 articles.</li>
+
+<li><span class="n">12</span><b>Sentiment analysis with Hugging Face models</b> <span class="tag cost">free &middot; ~1 day</span> &mdash; multilingual sentiment models exist and run locally, but they are trained on tweets and product reviews, and sentiment is not stance &mdash; the distinction that already broke the tone analysis once.</li>
+
+<li><span class="n">13</span><b>Named entities: who is named, and where</b> <span class="tag cost">free &middot; ~1 day</span> &mdash; per-language entity extraction would turn "named figures" from a topic-model impression into a countable, comparable variable across countries.</li>
+
+<li><span class="n">14</span><b>What predicts propagation lag</b> <span class="tag cost">free &middot; ~2 days</span> &mdash; the lag numbers already exist; testing shared language, geographic distance and media ties as predictors is the analysis they were built for.</li>
+
+<li><span class="n">15</span><b>Outlet-level political leaning</b> <span class="tag bad">coverage risk</span> &mdash; would need an external outlet-ideology source, and those are thin outside the United States, which is exactly where this corpus is most multilingual.</li>
+
+<li><span class="n">16</span><b>Re-running topics and events on the deduplicated corpus</b> <span class="tag cost">free &middot; hours</span> &mdash; topic modelling and propagation currently read the pre-deduplication file, so they count syndicated copies that section 03 removed.</li>
+
+</ul>
+<div class="note"><b>Data caveats that travel with every number above.</b> Outlet names collapse by domain; about 7% of downloaded pages served current site content rather than the original article (7,485 excluded from topic modelling); the Weinstein story cannot be measured because it broke ten days before the hashtag existed; and absence of coverage here means absence in this corpus, not silence in that country.</div>
 </div>
-</div>
+
 </section>
 
 <!-- ============ CORPUS (v3, embedded) ============ -->
@@ -468,8 +500,8 @@ footer{margin-top:30px;padding-top:12px;border-top:1px solid #DCDCD4;font-family
 </section>
 
 <footer>
-compiled 2026-08-07 · #MeToo global press corpus, Oct 2017–Dec 2019 · fads-metoo project<br>
-this page: overview + full-text rematch + events/spread + topic modelling are new; corpus and fetch/duplicates tabs embed the existing dashboard files unchanged
+compiled 2026-08-19 · #MeToo global press corpus, Oct 2017–Dec 2019 · fads-metoo project<br>
+overview rebuilt 2026-08-19 as a research-direction inventory; corpus and fetch/duplicates tabs embed the existing dashboard files unchanged
 </footer>
 </div>
 
